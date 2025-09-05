@@ -1,0 +1,938 @@
+## Java Cheat Sheet
+
+Résumé de la syntaxe générale Java pour la plupart des constructions.
+
+[source,java]
+----
+// Les commentaires sur une seule ligne commencent par //
+
+/*
+Les commentaires multi-lignes ressemblent à ceci.
+*/
+
+/**
+ * Les commentaires JavaDoc ressemblent à ceci. Utilisés pour décrire la classe ou divers
+ * attributs d'une classe.
+ * Principaux attributs :
+ *
+ * @author         Nom (et informations de contact telles que l'email) des auteurs.
+ * @version     Version actuelle du programme.
+ * @since        Date à laquelle cette partie du programme a été ajoutée.
+ * @param         Pour décrire les différents paramètres d'une méthode.
+ * @return        Pour décrire ce que la méthode retourne.
+ * @deprecated  Pour indiquer que le code est obsolète ou ne doit pas être utilisé.
+ * @see         Liens vers une autre partie de la documentation.
+*/
+
+// Importer la classe ArrayList du package java.util
+import java.util.ArrayList;
+// Importer toutes les classes du package java.security
+import java.security.*;
+// Java pour illustrer l'appel des membres et méthodes statiques sans appeler le nom de la classe
+import static java.lang.Math.*;
+import static java.lang.System.*;
+
+public class LearnJava {
+
+  // Pour exécuter un programme Java, il doit avoir une méthode main comme point d'entrée.
+  public static void main(String[] args) {
+
+    ///////////////////////////////////////
+    // Entrée/Sortie
+    ///////////////////////////////////////
+
+    /*
+    * Sortie
+    */
+
+    // Utiliser System.out.println() pour afficher des lignes.
+    System.out.println("Bonjour le monde!");
+    System.out.println(
+        "Entier: " + 10 +
+        " Double: " + 3.14 +
+        " Booléen: " + true);
+
+    // Pour afficher sans retour à la ligne, utiliser System.out.print().
+    System.out.print("Bonjour ");
+    System.out.print("le monde");
+
+    // Utiliser System.out.printf() pour un formatage facile.
+    System.out.printf("pi = %.5f", Math.PI); // => pi = 3.14159
+
+    /*
+      * Entrée
+      */
+
+    // utiliser Scanner pour lire les entrées
+    // doit importer java.util.Scanner;
+    Scanner scanner = new Scanner(System.in);
+
+    // lire une entrée de chaîne de caractères
+    String name = scanner.next();
+
+    // lire une entrée de type byte
+    byte numByte = scanner.nextByte();
+
+    // lire une entrée de type int
+    int numInt = scanner.nextInt();
+
+    // lire une entrée de type long
+    long numLong = scanner.nextLong();
+
+    // lire une entrée de type float
+    float numFloat = scanner.nextFloat();
+
+    // lire une entrée de type double
+    double numDouble = scanner.nextDouble();
+
+    // lire une entrée de type booléen
+    boolean bool = scanner.nextBoolean();
+
+    ///////////////////////////////////////
+    // Variables
+    ///////////////////////////////////////
+
+    /*
+    *  Déclaration de Variable
+    */
+    // Déclarer une variable en utilisant <type> <nom>
+    int fooInt;
+    // Déclarer plusieurs variables du même
+    // type <type> <nom1>, <nom2>, <nom3>
+    int fooInt1, fooInt2, fooInt3;
+
+    /*
+    *  Initialisation de Variable
+    */
+
+    // Initialiser une variable en utilisant <type> <nom> = <valeur>
+    int barInt = 1;
+    // Initialiser plusieurs variables du même type avec la même
+    // valeur <type> <nom1>, <nom2>, <nom3>
+    // <nom1> = <nom2> = <nom3> = <valeur>
+    int barInt1, barInt2, barInt3;
+    barInt1 = barInt2 = barInt3 = 1;
+    // Raccourci pour déclarations multiples
+    int barInt4 = 1, barInt5 = 2;
+
+
+    /*
+    *  Types de Variable
+    */
+    // Byte - entier signé sur 8 bits en complément à deux
+    // (-128 <= byte <= 127)
+    byte fooByte = 100;
+
+    // Si vous souhaitez interpréter un byte comme un entier non signé
+    // alors cette simple opération peut aider
+    int unsignedIntLessThan256 = 0xff & fooByte;
+    // cela contraste avec une conversion qui peut être négative.
+    int signedInt = (int) fooByte;
+
+    // Short - entier signé sur 16 bits en complément à deux
+    // (-32,768 <= short <= 32,767)
+    short fooShort = 10000;
+
+    // Integer - entier signé sur 32 bits en complément à deux
+    // (-2,147,483,648 <= int <= 2,147,483,647)
+    int bazInt = 1;
+
+    // Long - entier signé sur 64 bits en complément à deux
+    // (-9,223,372,036,854,775,808 <= long <= 9,223,372,036,854,775,807)
+    long fooLong = 100000L;
+    // L est utilisé pour indiquer que cette valeur de variable est de type Long;
+    // tout ce qui n'est pas marqué est traité comme un entier par défaut.
+
+    // Note : byte, short, int et long sont signés. Ils peuvent avoir des valeurs positives et négatives.
+    // Il n'y a pas de variantes non signées.
+    // char, cependant, est un entier non signé sur 16 bits.
+
+    // Float - virgule flottante en précision simple de 32 bits IEEE 754
+    // 2^-149 <= float <= (2-2^-23) * 2^127
+    float fooFloat = 234.5f;
+    // f ou F est utilisé pour indiquer que cette valeur de variable est de type float;
+    // sinon elle est traitée comme un double.
+
+    // Double - virgule flottante en précision double de 64 bits IEEE 754
+    // 2^-1074 <= x <= (2-2^-52) * 2^1023
+    double fooDouble = 123.4;
+
+    // Boolean - true & false
+    boolean fooBoolean = true;
+    boolean barBoolean = false;
+
+    // Char - Un caractère Unicode sur 16 bits
+    char fooChar = 'A';
+
+    // les variables final ne peuvent pas être réaffectées,
+    final int HOURS_I_WORK_PER_WEEK = 9001;
+    // mais elles peuvent être initialisées plus tard.
+    final double E;
+    E = 2.71828;
+
+    // BigInteger - entiers immuables de précision arbitraire
+    //
+    // BigInteger est un type de données qui permet aux programmeurs de manipuler
+    // des entiers plus longs que 64 bits. Les entiers sont stockés sous forme de tableau de
+    // bytes et sont manipulés à l'aide de fonctions intégrées à BigInteger.
+    //
+    // BigInteger peut être initialisé à l'aide d'un tableau de bytes ou d'une chaîne de caractères.
+    BigInteger fooBigInteger = new BigInteger(fooByteArray);
+
+    // BigDecimal - nombre décimal signé immuable de précision arbitraire
+    //
+    // Un BigDecimal se compose de deux parties : une valeur entière non échelonnée
+    // de précision arbitraire et une échelle entière sur 32 bits.
+    //
+    // BigDecimal permet au programmeur de contrôler entièrement l'arrondissement des décimales.
+    // Il est recommandé d'utiliser BigDecimal pour les valeurs monétaires
+    // et lorsque la précision décimale exacte est requise.
+    //
+    // BigDecimal peut être initialisé avec un int, long, double ou String
+    // ou en initialisant la valeur non échelonnée (BigInteger) et l'échelle (int).
+    BigDecimal fooBigDecimal = new BigDecimal(fooBigInteger, fooInt);
+
+    // Soyez prudent avec le constructeur qui prend un float ou un double car
+    // l'inexactitude du float/double sera copiée dans BigDecimal.
+    // Préférez le constructeur String lorsque vous avez besoin d'une valeur exacte.
+    BigDecimal tenCents = new BigDecimal("0.1");
+
+    // Inférence de type avec 'var'
+    var x = 100; // int
+    var y = 1.90; // double
+    var z = 'a'; // char
+    var p = "tanu"; // String
+    var q = false; // boolean
+
+    // Chaînes de caractères
+    String fooString = "Ma chaîne est ici!";
+
+    // Blocs de texte
+    var textBlock = """
+                    Ceci est un <Bloc de Texte> en Java
+                    """;
+
+    // \n est un caractère échappé qui commence une nouvelle ligne
+    String barString = "Imprimer sur une nouvelle ligne?\nPas de problème!";
+    // \t est un caractère échappé qui ajoute un caractère de tabulation
+    String bazString = "Voulez-vous ajouter une tabulation?\tPas de problème!";
+    System.out.println(fooString);
+    System.out.println(barString);
+    System.out.println(bazString);
+
+    // Construction de chaînes
+    // #1 - avec l'opérateur plus
+    // C'est la façon de base de le faire (optimisé en interne)
+    String plusConcatenated = "Les chaînes peuvent " + "être concaténées " + "via l'opérateur +.";
+    System.out.println(plusConcatenated);
+    // Sortie : Les chaînes peuvent être concaténées via l'opérateur +.
+
+    // #2 - avec StringBuilder
+    // Cette méthode ne crée pas de chaînes intermédiaires. Elle stocke simplement les morceaux de chaîne, et les relie
+    // lorsque toString() est appelé.
+    // Conseil : cette classe n'est pas thread-safe. Une alternative thread-safe (avec un certain impact sur les performances) est StringBuffer.
+    StringBuilder builderConcatenated = new StringBuilder();
+    builderConcatenated.append("Vous ");
+    builderConcatenated.append("pouvez utiliser ");
+    builderConcatenated.append("la classe StringBuilder.");
+    System.out.println(builderConcatenated.toString()); // ce n'est que maintenant que la chaîne est construite
+    // Sortie : Vous pouvez utiliser la classe StringBuilder.
+
+    // StringBuilder est efficace lorsque la chaîne entièrement construite n'est pas nécessaire avant la fin d'un certain traitement.
+    StringBuilder stringBuilder = new StringBuilder();
+    String inefficientString = "";
+    for (int i = 0 ; i < 10; i++) {
+        stringBuilder.append(i).append(" ");
+        inefficientString += i + " ";
+    }
+    System.out.println(inefficientString);
+    System.out.println(stringBuilder.toString());
+    // inefficientString nécessite beaucoup plus de travail pour être produite, car elle génère une chaîne à chaque itération de la boucle.
+    // La concaténation simple avec + est compilée en un StringBuilder et toString()
+    // Évitez la concaténation de chaînes dans les boucles.
+
+    // #3 - avec le formateur de chaînes
+    // Une autre manière alternative de créer des chaînes. Rapide et lisible.
+    String.format("%s peut préférer %s.", "Ou vous", "String.format()");
+    // Sortie : Ou vous pouvez préférer String.format().
+
+    // Tableaux
+    // La taille du tableau doit être décidée lors de l'instanciation
+    // Les formats suivants fonctionnent pour déclarer un tableau
+    // <datatype>[] <nom var> = new <datatype>[<taille tableau>];
+    // <datatype> <nom var>[] = new <datatype>[<taille tableau>];
+    int[] intArray = new int[10];
+    String[] stringArray = new String[1];
+    boolean boolArray[] = new boolean[100];
+
+    // Une autre manière de déclarer et initialiser un tableau
+    int[] y = {9000, 1000, 1337};
+    String names[] = {"Bob", "John", "Fred", "Juan Pedro"};
+    boolean bools[] = {true, false, false};
+
+    // Indexation d'un tableau - Accéder à un élément
+    System.out.println("intArray @ 0: " + intArray[0]);
+
+    // Les tableaux sont indexés à partir de zéro et mutables.
+    intArray[1] = 1;
+    System.out.println("intArray @ 1: " + intArray[1]); // => 1
+
+    // Autres types de données à découvrir
+    // ArrayLists - Comme des tableaux mais avec plus de fonctionnalités, et
+    //              la taille est mutable.
+    // LinkedLists - Implémentation d'une liste doublement chaînée. Toutes les
+    //               opérations se comportent comme prévu pour une
+    //               liste doublement chaînée.
+    // Maps - Une association d'objets clé à objets valeur. Map est
+    //        une interface et ne peut donc pas être instanciée.
+    //        Le type de clés et de valeurs contenues dans un Map doit
+    //        être spécifié lors de l'instanciation de la classe implémentante.
+    //        Chaque clé peut être associée à une seule valeur correspondante,
+    //        et chaque clé peut apparaître une seule fois (pas de doublons).
+    // HashMaps - Cette classe utilise une table de hachage pour implémenter l'interface Map.
+    //            Cela permet de maintenir le temps d'exécution des opérations de base,
+    //            telles que l'obtention et l'insertion d'éléments, à une constante amortie même pour de grands ensembles.
+    // TreeMap - Un Map trié par ses clés. Chaque modification
+    //           maintient le tri défini soit par un Comparator
+    //           fourni à l'instanciation, soit par les comparaisons de chaque objet
+    //           s'ils implémentent l'interface Comparable.
+    //           L'absence d'implémentation de Comparable par les clés combinée à l'absence de
+    //           fourniture d'un Comparator entraînera des ClassCastExceptions.
+    //           Les opérations d'insertion et de suppression prennent un temps O(log(n)),
+    //           donc évitez d'utiliser cette structure de données sauf si vous bénéficiez
+    //           du tri.
+
+    ///////////////////////////////////////
+    // Opérateurs
+    ///////////////////////////////////////
+    System.out.println("\n->Opérateurs");
+
+    int i1 = 1, i2 = 2;
+
+    // L'arithmétique est simple
+    System.out.println("1+2 = " + (i1 + i2)); // => 3
+    System.out.println("2-1 = " + (i2 - i1)); // => 1
+    System.out.println("2*1 = " + (i2 * i1)); // => 2
+    System.out.println("1/2 = " + (i1 / i2)); // => 0 (int/int retourne int)
+    System.out.println("1/2.0 = " + (i1 / (double)i2)); // => 0.5
+
+    // Modulo
+    System.out.println("11%3 = " + (11 % 3)); // => 2
+
+    // Opérateurs de comparaison
+    System.out.println("3 == 2? " + (3 == 2)); // => false
+    System.out.println("3 != 2? " + (3 != 2)); // => true
+    System.out.println("3 > 2? " + (3 > 2)); // => true
+    System.out.println("3 < 2? " + (3 < 2)); // => false
+    System.out.println("2 <= 2? " + (2 <= 2)); // => true
+    System.out.println("2 >= 2? " + (2 >= 2)); // => true
+
+    // Opérateurs booléens
+    System.out.println("3 > 2 && 2 > 3? " + ((3 > 2) && (2 > 3))); // => false
+    System.out.println("3 > 2 || 2 > 3? " + ((3 > 2) || (2 > 3))); // => true
+    System.out.println("!(3 == 2)? " + (!(3 == 2))); // => true
+
+    // Opérateurs de manipulation de bits!
+    /*
+    ~      Complément binaire unaire
+    <<     Décalage à gauche signé
+    >>     Décalage à droite signé/arithmetic
+    >>>    Décalage à droite non signé/logique
+    &      ET binaire
+    ^      OU exclusif binaire
+    |      OU inclusif binaire
+    */
+
+    // Opérateurs d'incrémentation
+    int i = 0;
+    System.out.println("\n->Inc/Dec-rementation");
+    // Les opérateurs ++ et -- incrémentent et décrémentent de 1 respectivement.
+    // S'ils sont placés avant la variable, ils incrémentent puis retournent;
+    // après la variable, ils retournent puis incrémentent.
+    System.out.println(i++); // i = 1, affiche 0 (post-incrément)
+    System.out.println(++i); // i = 2, affiche 2 (pré-incrément)
+    System.out.println(i--); // i = 1,
+
+    // Switch Case
+    // Un switch fonctionne avec les types de données byte, short, char et int.
+    // Il fonctionne également avec les types énumérés (discutés dans Enum Types), la
+    // classe String et quelques classes spéciales qui enveloppent les types primitifs :
+    // Character, Byte, Short et Integer.
+    // À partir de Java 7 et plus, nous pouvons également utiliser le type String.
+    // Note : N'oubliez pas que ne pas ajouter "break" à la fin d'un cas particulier entraîne
+    // l'exécution du cas suivant (à condition qu'il satisfasse la condition fournie).
+    int month = 3;
+    String monthString;
+    switch (month) {
+        case 1: monthString = "Janvier";
+                break;
+        case 2: monthString = "Février";
+                break;
+        case 3: monthString = "Mars";
+                break;
+        default: monthString = "Un autre mois";
+                  break;
+    }
+    System.out.println("Résultat du Switch Case : " + monthString);
+
+    // Try-with-resources (Java 7+)
+    // Les instructions try-catch-finally fonctionnent comme prévu en Java, mais en Java 7+,
+    // l'instruction try-with-resources est également disponible. Try-with-resources
+    // simplifie les instructions try-catch-finally en fermant automatiquement les ressources.
+
+    // Pour utiliser un try-with-resources, incluez une instance d'une classe
+    // dans l'instruction try. La classe doit implémenter java.lang.AutoCloseable.
+    try (BufferedReader br = new BufferedReader(new FileReader("foo.txt"))) {
+        // Vous pouvez essayer de faire quelque chose qui pourrait lancer une exception.
+        System.out.println(br.readLine());
+        // En Java 7, la ressource sera toujours fermée, même si elle lance
+        // une Exception.
+    } catch (IOException | SQLException ex) {
+        // Java 7+ Le bloc de capture multiple gère les deux exceptions
+    } catch (Exception ex) {
+        // La ressource sera fermée avant l'exécution de l'instruction catch.
+        System.out.println("readLine() a échoué.");
+    }
+    // Pas besoin d'une instruction finally dans ce cas, le BufferedReader est
+    // déjà fermé. Cela peut être utilisé pour éviter certains cas particuliers où
+    // une instruction finally pourrait ne pas être appelée.
+    // Pour en savoir plus :
+    // https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html
+
+    // Raccourci conditionnel
+    // Vous pouvez utiliser l'opérateur '?' pour des affectations rapides ou des branches logiques.
+    // Se lit comme "Si (statement) est vrai, utilisez <première valeur>, sinon, utilisez
+    // <deuxième valeur>"
+    int foo = 5;
+    String bar = (foo < 10) ? "A" : "B";
+    System.out.println("bar : " + bar); // Affiche "bar : A", car la
+    // condition est vraie.
+    // Ou simplement
+    System.out.println("bar : " + (foo < 10 ? "A" : "B"));
+
+    ////////////////////////////////////////
+    // Conversion de types de données
+    ////////////////////////////////////////
+
+    // Conversion de données
+
+    // Convertir une chaîne en entier
+    Integer.parseInt("123"); // retourne une version entière de "123"
+
+    // Convertir un entier en chaîne
+    Integer.toString(123); // retourne une version en chaîne de 123
+
+    // Pour d'autres conversions, consultez les classes suivantes :
+    // Double
+    // Long
+    // String
+
+    ///////////////////////////////////////
+    // Classes et fonctions
+    ///////////////////////////////////////
+
+    System.out.println("\n->Classes & Fonctions");
+
+    // (la définition de la classe Bicycle suit)
+
+    // Utilisez new pour instancier une classe
+    Bicycle trek = new Bicycle();
+
+    // Appelez les méthodes de l'objet
+    trek.speedUp(3); // Vous devriez toujours utiliser des méthodes setters et getters
+    trek.setCadence(100);
+
+    // toString retourne la représentation de chaîne de cet objet.
+    System.out.println("infos trek : " + trek.toString());
+  } // Fin de la méthode main
+
+  private static class TestInitialization {
+    // Initialisation par double accolade
+    // Avant Java 11, le langage Java n'avait pas de syntaxe facile pour créer
+    // des Collections statiques de manière simple. Habituellement, vous terminez comme ceci :
+    private static final Set<String> COUNTRIES = new HashSet<String>();
+    static {
+        COUNTRIES.add("DANEMARK");
+        COUNTRIES.add("SUÈDE");
+        COUNTRIES.add("FINLANDE");
+    }
+
+    // Il y a un moyen astucieux d'obtenir la même chose,
+    // en utilisant quelque chose qui s'appelle Initialisation par double accolade.
+    private static final Set<String> COUNTRIES_DOUBLE_BRACE =
+    new HashSet<String>() {{
+        add("DANEMARK");
+        add("SUÈDE");
+        add("FINLANDE");
+    }}
+
+    // La première accolade crée une nouvelle classe interne anonyme et la
+    // seconde déclare un bloc d'initialisation d'instance. Ce bloc
+    // est appelé lorsque la classe interne anonyme est créée.
+    // Cela fonctionne non seulement pour les Collections, mais pour toutes
+    // les classes non-finales.
+
+    // Une autre option consistait à initialiser la Collection à partir d'un tableau,
+    // en utilisant la méthode Arrays.asList() :
+    private static final List<String> COUNTRIES_AS_LIST =
+                    Arrays.asList("SUÈDE", "DANEMARK", "NORVÈGE");
+    // Cela a un piège : la liste que nous obtenons est en fait soutenue par le tableau,
+    // et puisque les tableaux ne peuvent pas changer de taille, la liste soutenue par le tableau
+    // n'est pas redimensionnable, ce qui signifie que nous ne pouvons pas y ajouter de nouveaux éléments :
+    public static void main(String[] args) {
+        COUNTRIES.add("FINLANDE"); // lance UnsupportedOperationException !
+        // Cependant, nous pouvons remplacer des éléments par index, comme dans un tableau :
+        COUNTRIES.set(1, "FINLANDE");
+        System.out.println(COUNTRIES); // affiche [SUÈDE, FINLANDE, NORVÈGE]
+    }
+    // Le problème de redimensionnement peut être contourné
+    // en créant une autre Collection à partir de la Liste :
+      private static final Set<String> COUNTRIES_SET =
+            new HashSet<>(Arrays.asList("SUÈDE", "DANEMARK", "NORVÈGE"));
+    // Il est parfaitement correct d'ajouter n'importe quoi à l'ensemble des PAYS maintenant.
+  } // Fin de la classe TestInitialization
+
+  private static class TestJava11Initialization {
+    // Depuis Java 11, il existe une option pratique pour initialiser les Collections :
+    // Les méthodes Set.of() et List.of().
+    private static final Set<String> COUNTRIES =
+            Set.of("SUÈDE", "DANEMARK", "NORVÈGE");
+    // Il y a cependant un gros inconvénient : les Listes et Sets initialisés de cette façon
+    // 1) sont immuables
+    // 2) ne peuvent pas contenir d'éléments nuls (même vérifier les éléments nuls échoue) !
+    public static void main(String[] args) {
+        COUNTRIES.add("FINLANDE"); // lance UnsupportedOperationException
+        COUNTRIES.remove("NORVÈGE"); // lance UnsupportedOperationException
+        COUNTRIES.contains(null); // lance NullPointerException
+    }
+    private static final Set<String> COUNTRIES_WITH_NULL =
+                Set.of("SUÈDE", null, "NORVÈGE"); // lance NullPointerException
+
+  } // Fin de la classe TestJava11Initialization
+} // Fin de la classe LearnJava
+
+// Vous pouvez inclure d'autres classes externes non publiques dans un fichier .java,
+// mais ce n'est pas une bonne pratique. Au lieu de cela, séparez les classes en fichiers distincts.
+
+// Syntaxe de déclaration de classe :
+// <public/private/protected> class <nom de la classe> {
+//    // champs de données, constructeurs, fonctions tout à l'intérieur.
+//    // les fonctions sont appelées des méthodes en Java.
+// }
+
+class Bicycle {
+
+  // Champs/Variables de Bicycle
+  public int cadence; // Public : Accessible de n'importe où
+  private int speed;  // Privé : Accessible uniquement depuis la classe
+  protected int gear; // Protégé : Accessible depuis la classe et les sous-classes
+  String name; // par défaut : Accessible uniquement depuis ce package
+  static String className; // Variable de classe statique
+
+  // Bloc statique
+  // Java n'a pas d'implémentation de constructeurs statiques, mais
+  // dispose d'un bloc statique qui peut être utilisé pour initialiser les variables de classe
+  // (variables statiques).
+  // Ce bloc sera appelé lorsque la classe est chargée.
+  static {
+    className = "Bicycle";
+  }
+
+  // Les constructeurs sont un moyen de créer des classes
+  // Ceci est un constructeur
+  public Bicycle() {
+    // Vous pouvez également appeler un autre constructeur :
+    // this(1, 50, 5, "Bontrager");
+    gear = 1;
+    cadence = 50;
+    speed = 5;
+    name = "Bontrager";
+  }
+  // Ceci est un constructeur qui prend des arguments
+  public Bicycle(int startCadence, int startSpeed, int startGear, String name) {
+    this.gear = startGear;
+    this.cadence = startCadence;
+    this.speed = startSpeed;
+    this.name = name;
+  }
+
+  // Syntaxe des méthodes :
+  // <public/private/protected> <type de retour> <nom de la fonction>(<args>)
+
+  // Les classes Java implémentent souvent des getters et setters pour leurs champs
+
+  // Syntaxe de déclaration de méthode :
+  // <modificateur d'accès> <type de retour> <nom de la méthode>(<args>)
+  public int getCadence() {
+    return cadence;
+  }
+
+  // les méthodes void ne nécessitent pas de return
+  public void setCadence(int newValue) {
+    cadence = newValue;
+  }
+  public void setGear(int newValue) {
+    gear = newValue;
+  }
+  public void speedUp(int increment) {
+    speed += increment;
+  }
+  public void slowDown(int decrement) {
+    speed -= decrement;
+  }
+  public void setName(String newName) {
+    name = newName;
+  }
+  public String getName() {
+    return name;
+  }
+
+  // Méthode pour afficher les valeurs des attributs de cet objet.
+  @Override // Hérité de la classe Object.
+  public String toString() {
+    return "gear: " + gear + " cadence: " + cadence + " speed: " + speed +
+           " name: " + name;
+  }
+} // fin de la classe Bicycle
+
+// PennyFarthing est une sous-classe de Bicycle
+class PennyFarthing extends Bicycle {
+  // (Les Penny Farthings sont ces vélos avec la grande roue avant.
+  // Ils n'ont pas de vitesses.)
+
+  public PennyFarthing(int startCadence, int startSpeed) {
+    // Appeler le constructeur parent avec super
+    super(startCadence, startSpeed, 0, "PennyFarthing");
+  }
+
+  // Vous devez marquer une méthode que vous remplacez avec une @annotation.
+  // Pour en savoir plus sur ce que sont les annotations et leur utilité,
+  // consultez ceci : http://docs.oracle.com/javase/tutorial/java/annotations/
+  @Override
+  public void setGear(int gear) {
+    this.gear = 0;
+  }
+}
+
+// Casting d'objet
+// Puisque la classe PennyFarthing étend la classe Bicycle, nous pouvons dire
+// qu'un PennyFarthing est un Bicycle et écrire :
+// Bicycle bicycle = new PennyFarthing();
+// C'est ce qu'on appelle le casting d'objet où un objet est pris pour un autre.
+// Il y a beaucoup de détails et cela traite de concepts plus intermédiaires ici:
+// https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html
+
+// Interfaces
+// Syntaxe de déclaration d'interface
+// <niveau d'accès> interface <nom de l'interface> extends <super-interfaces> {
+//     // Constantes
+//     // Déclarations de méthodes
+// }
+
+// Exemple - Aliment :
+public interface Edible {
+  public void eat(); // Toute classe qui implémente cette interface, doit
+                     // implémenter cette méthode.
+}
+
+public interface Digestible {
+  public void digest();
+  // Depuis Java 8, les interfaces peuvent avoir des méthodes par défaut.
+  public default void defaultMethod() {
+    System.out.println("Bonjour depuis la méthode par défaut ...");
+  }
+}
+
+// Nous pouvons maintenant créer une classe qui implémente ces deux interfaces.
+public class Fruit implements Edible, Digestible {
+  @Override
+  public void eat() {
+    // ...
+  }
+
+  @Override
+  public void digest() {
+    // ...
+  }
+}
+
+// En Java, vous pouvez étendre une seule classe, mais vous pouvez implémenter de nombreuses
+// interfaces. Par exemple :
+public class ExampleClass extends ExampleClassParent implements InterfaceOne,
+    InterfaceTwo {
+  @Override
+  public void InterfaceOneMethod() {
+  }
+
+  @Override
+  public void InterfaceTwoMethod() {
+  }
+}
+
+// Classes abstraites
+
+// Syntaxe de déclaration de classe abstraite
+// <niveau d'accès> abstract class <nom de la classe abstraite> extends
+// <super-classes abstraites> {
+//     // Constantes et variables
+//     // Déclarations de méthodes
+// }
+
+// Les classes abstraites ne peuvent pas être instanciées.
+// Les classes abstraites peuvent définir des méthodes abstraites.
+// Les méthodes abstraites n'ont pas de corps et sont marquées abstract.
+// Les classes enfants non abstraites doivent @Override toutes les méthodes abstraites
+// de leurs super-classes.
+// Les classes abstraites peuvent être utiles lorsqu'on combine une logique répétitive
+// avec un comportement personnalisé, mais comme les classes abstraites nécessitent
+// l'héritage, elles violent le principe "Composition over inheritance"
+// alors considérez d'autres approches utilisant la composition.
+// https://fr.wikipedia.org/wiki/Composition_sur_h%C3%A9ritage
+
+public abstract class Animal
+{
+  private int age;
+
+  public abstract void makeSound();
+
+  // Une méthode peut avoir un corps
+  public void eat()
+  {
+    System.out.println("Je suis un animal et je mange.");
+    // Note : Nous pouvons accéder à une variable privée ici.
+    age = 30;
+  }
+
+  public void printAge()
+  {
+    System.out.println(age);
+  }
+
+  // Les classes abstraites peuvent avoir une méthode main.
+  public static void main(String[] args)
+  {
+    System.out.println("Je suis abstrait");
+  }
+}
+
+class Dog extends Animal
+{
+  // Note : il faut toujours remplacer les méthodes abstraites de la
+  // classe abstraite.
+  @Override
+  public void makeSound()
+  {
+    System.out.println("Aboyer");
+    // age = 30;    ==> ERREUR!    age est privé à Animal
+  }
+
+  // NOTE : Vous obtiendrez une erreur si vous utilisez l'annotation
+  // @Override ici, car Java n'autorise pas
+  // le remplacement des méthodes statiques.
+  // Ce qui se passe ici s'appelle le MASQUAGE DE MÉTHODE.
+  // Consultez ce post SO : http://stackoverflow.com/questions/16313649/
+  public static void main(String[] args)
+  {
+    Dog pluto = new Dog();
+    pluto.makeSound();
+    pluto.eat();
+    pluto.printAge();
+  }
+}
+
+// Classes finales
+
+// Syntaxe de déclaration de classe finale
+// <niveau d'accès> final <nom de la classe finale> {
+//     // Constantes et variables
+//     // Déclarations de méthodes
+// }
+
+// Les classes finales sont des classes qui ne peuvent pas être héritées et sont donc des
+// enfants finaux. En quelque sorte, les classes finales sont à l'opposé des classes abstraites
+// parce que les classes abstraites doivent être étendues, mais les classes finales ne peuvent pas être
+// étendues.
+public final class SaberToothedCat extends Animal
+{
+  // Note : il faut toujours remplacer les méthodes abstraites de la
+  // classe abstraite.
+  @Override
+  public void makeSound()
+  {
+    System.out.println("Rugir");
+  }
+}
+
+// Méthodes finales
+public abstract class Mammal
+{
+  // Syntaxe des méthodes finales :
+  // <modificateur d'accès> final <type de retour> <nom de la fonction>(<args>)
+
+  // Les méthodes finales, comme les classes finales, ne peuvent pas être remplacées par une classe enfant,
+  // et sont donc la mise en œuvre finale de la méthode.
+  public final boolean isWarmBlooded()
+  {
+    return true;
+  }
+}
+
+// Les records Java sont une manière concise de définir des classes de transport de données immuables, générant automatiquement du code standard comme les constructeurs, equals(), hashCode() et toString().
+// Cela crée automatiquement une classe immuable Person avec les champs name et age.
+public record Person(String name, int age) {}
+Person p = new Person("Alice", 30);
+
+// Type Enum
+//
+// Un type enum est un type de données spécial qui permet à une variable d'être un ensemble
+// de constantes prédéfinies. La variable doit être égale à l'une des valeurs
+// qui ont été prédéfinies pour elle. Parce qu'elles sont des constantes, les noms des
+// champs d'un type enum sont en majuscules. Dans le langage de programmation Java,
+// vous définissez un type enum en utilisant le mot-clé enum. Par exemple,
+// vous pouvez spécifier un type enum jours-de-la-semaine comme suit :
+public enum Day {
+  SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
+  THURSDAY, FRIDAY, SATURDAY
+}
+
+// Nous pouvons utiliser notre enum Day comme ceci :
+public class EnumTest {
+  // Variable Enum
+  Day day;
+
+  public EnumTest(Day day) {
+    this.day = day;
+  }
+
+  public void tellItLikeItIs() {
+    switch (day) {
+      case MONDAY:
+        System.out.println("Les lundis sont mauvais.");
+        break;
+      case FRIDAY:
+        System.out.println("Les vendredis sont meilleurs.");
+        break;
+      case SATURDAY:
+      case SUNDAY:
+        System.out.println("Les week-ends sont les meilleurs.");
+        break;
+      default:
+        System.out.println("Les jours de milieu de semaine sont moyens.");
+        break;
+    }
+  }
+
+  public static void main(String[] args) {
+    EnumTest firstDay = new EnumTest(Day.MONDAY);
+    firstDay.tellItLikeItIs(); // => Les lundis sont mauvais.
+    EnumTest thirdDay = new EnumTest(Day.WEDNESDAY);
+    thirdDay.tellItLikeItIs(); // => Les jours de milieu de semaine sont moyens.
+  }
+}
+
+// Les types Enum sont beaucoup plus puissants que ce que nous montrons ci-dessus.
+// Le corps de l'enum peut inclure des méthodes et d'autres champs.
+// Vous pouvez en voir plus à https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
+
+// Prise en main des expressions lambda
+//
+// Nouveauté de la version 8 de Java, les expressions lambda. Les lambdas sont plus couramment trouvées
+// dans les langages de programmation fonctionnelle, ce qui signifie qu'elles sont des méthodes qui peuvent
+// être créées sans appartenir à une classe, passées comme si elles étaient elles-mêmes
+// un objet, et exécutées à la demande.
+//
+// Dernière note, les lambdas doivent implémenter une interface fonctionnelle. Une interface
+// fonctionnelle est celle qui a seulement une méthode abstraite déclarée. Elle peut
+// avoir n'importe quel nombre de méthodes par défaut. Les expressions lambda peuvent être utilisées comme une
+// instance de cette interface fonctionnelle. Toute interface répondant aux exigences
+// est traitée comme une interface fonctionnelle. Vous pouvez en savoir plus sur les interfaces
+// ci-dessus.
+//
+import java.util.Map;
+import java.util.HashMap;
+import java.util.function.*;
+import java.security.SecureRandom;
+
+public class Lambdas {
+  public static void main(String[] args) {
+    // Syntaxe de déclaration lambda :
+    // <zéro ou plusieurs paramètres> -> <corps de l'expression ou bloc d'instructions>
+
+    // Nous utiliserons ce hashmap dans nos exemples ci-dessous.
+    Map<String, String> planets = new HashMap<>();
+      planets.put("Mercure", "87.969");
+      planets.put("Vénus", "224.7");
+      planets.put("Terre", "365.2564");
+      planets.put("Mars", "687");
+      planets.put("Jupiter", "4,332.59");
+      planets.put("Saturne", "10,759");
+      planets.put("Uranus", "30,688.5");
+      planets.put("Neptune", "60,182");
+
+    // Lambda sans paramètres en utilisant l'interface fonctionnelle Supplier
+    // de java.util.function.Supplier. La véritable expression lambda est
+    // ce qui vient après numPlanets =.
+    Supplier<String> numPlanets = () -> Integer.toString(planets.size());
+    System.out.format("Nombre de planètes : %s\n\n", numPlanets.get());
+
+    // Lambda avec un paramètre et en utilisant l'interface fonctionnelle Consumer
+    // de java.util.function.Consumer. C'est parce que planets est une Map,
+    // qui implémente à la fois Collection et Iterable. Le forEach utilisé ici,
+    // trouvé dans Iterable, applique l'expression lambda à chaque membre de
+    // la Collection. L'implémentation par défaut de forEach se comporte comme suit :
+    /*
+      for (T t : this)
+          action.accept(t);
+    */
+
+    // La véritable expression lambda est le paramètre passé à forEach.
+    planets.keySet().forEach((p) -> System.out.format("%s\n", p));
+
+    // Si vous ne passez qu'un seul argument, alors l'expression ci-dessus peut également être
+    // écrite comme suit (notez l'absence de parenthèses autour de p) :
+    planets.keySet().forEach(p -> System.out.format("%s\n", p));
+
+    // En traçant ce qui précède, nous voyons que planets est une HashMap, keySet() retourne
+    // un ensemble de ses clés, forEach applique chaque élément comme l'expression lambda
+    // de : (paramètre p) -> System.out.format("%s\n", p). À chaque fois,
+    // l'élément est "consommé" et l'instruction ou les instructions
+    // référencées dans le corps de la lambda sont appliquées. Rappelez-vous que le corps de la lambda
+    // est ce qui vient après le ->.
+
+    // Ce qui précède, sans utilisation de lambdas, ressemblerait plus traditionnellement à :
+    for (String planet : planets.keySet()) {
+        System.out.format("%s\n", planet);
+    }
+
+    // Cet exemple diffère du précédent en ce qu'une autre implémentation de forEach
+    // est utilisée : le forEach trouvé dans la classe HashMap
+    // implémentant l'interface Map. Ce forEach accepte un BiConsumer,
+    // qui, de manière générale, est une façon élégante de dire qu'il gère
+    // l'ensemble de chaque paire Clé -> Valeur. Cette implémentation par défaut
+    // se comporte comme suit :
+    /*
+        for (Map.Entry<K, V> entry : map.entrySet())
+            action.accept(entry.getKey(), entry.getValue());
+    */
+
+    // La véritable expression lambda est le paramètre passé à forEach.
+    String orbits = "%s orbite autour du Soleil en %s jours terrestres.\n";
+    planets.forEach((K, V) -> System.out.format(orbits, K, V));
+
+    // Ce qui précède, sans utilisation de lambdas, ressemblerait plus traditionnellement à :
+    for (String planet : planets.keySet()) {
+        System.out.format(orbits, planet, planets.get(planet));
+    }
+
+    // Ou, si nous suivons de plus près la spécification fournie par l'implémentation par défaut :
+    for (Map.Entry<String, String> planet : planets.entrySet()) {
+        System.out.format(orbits, planet.getKey(), planet.getValue());
+    }
+
+    // Ces exemples couvrent seulement l'utilisation très basique des lambdas. Cela peut ne pas
+    // sembler beaucoup ou même très utile, mais rappelez-vous qu'une lambda peut être
+    // créée comme un objet qui peut ensuite être passé en tant que paramètre à d'autres
+    // méthodes.
+  }
+}
+----

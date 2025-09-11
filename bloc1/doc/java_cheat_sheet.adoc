@@ -7,7 +7,16 @@ Résumé de la syntaxe générale Java pour la plupart des constructions.
 // Les commentaires sur une seule ligne commencent par //
 
 /*
-Les commentaires multi-lignes ressemblent à ceci.
+On peut écrire des commentaires sur plusieurs lignes :
+  - en utilisant // à chaque ligne ou bien, comme ici,
+  - en les encadrant avec /* et * /
+*/
+
+/*
+  Les commentaires dits "JavaDoc" sont utilisés pour générer de la documentation.
+  Cette documentation peut être automatiquement générée en HTML à l'aide de l'outil javadoc.
+  Elle est aussi automatiquement intégrée dans l'IDE (ex. VS Code), ce qui permet
+  d'accéder rapidement à la documentation d'une classe ou d'une méthode.
 */
 
 /**
@@ -15,11 +24,11 @@ Les commentaires multi-lignes ressemblent à ceci.
  * attributs d'une classe.
  * Principaux attributs :
  *
- * @author         Nom (et informations de contact telles que l'email) des auteurs.
+ * @author      Nom (et informations de contact telles que l'email) des auteurs.
  * @version     Version actuelle du programme.
- * @since        Date à laquelle cette partie du programme a été ajoutée.
- * @param         Pour décrire les différents paramètres d'une méthode.
- * @return        Pour décrire ce que la méthode retourne.
+ * @since       Date à laquelle cette partie du programme a été ajoutée.
+ * @param       Pour décrire les différents paramètres d'une méthode.
+ * @return      Pour décrire ce que la méthode retourne.
  * @deprecated  Pour indiquer que le code est obsolète ou ne doit pas être utilisé.
  * @see         Liens vers une autre partie de la documentation.
 */
@@ -46,7 +55,8 @@ public class LearnJava {
     */
 
     // Utiliser System.out.println() pour afficher des lignes.
-    System.out.println("Bonjour le monde!");
+    System.out.println("Bonjour tout le monde!");
+    // Utiliser la concaténation avec + pour "coller" des éléments ensemble.
     System.out.println(
         "Entier: " + 10 +
         " Double: " + 3.14 +
@@ -56,8 +66,8 @@ public class LearnJava {
     System.out.print("Bonjour ");
     System.out.print("le monde");
 
-    // Utiliser System.out.printf() pour un formatage facile.
-    System.out.printf("pi = %.5f", Math.PI); // => pi = 3.14159
+    // Utiliser System.out.printf() avec des % pour un formatage intégré.
+    System.out.printf("pi = %.5f", Math.PI); // => pi = 3.14159 (f = float, .5 = 5 décimales)
 
     /*
       * Entrée
@@ -97,8 +107,8 @@ public class LearnJava {
     */
     // Déclarer une variable en utilisant <type> <nom>
     int fooInt;
-    // Déclarer plusieurs variables du même
-    // type <type> <nom1>, <nom2>, <nom3>
+    // Déclarer plusieurs variables du même type
+    // <type> <nom1>, <nom2>, <nom3>
     int fooInt1, fooInt2, fooInt3;
 
     /*

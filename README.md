@@ -1,6 +1,6 @@
 # Dépôt support SIO1 2025-2026 (Promotion 2027)
 
-Ce dépôt contiendra les ressources et les progressions associées aux cours de Bloc 1, 2 et 3 spécifiés ci-dessous.
+Ce dépôt contiendra les ressources et les progressions de M. Gahide associées aux cours de Bloc 1, 2 et 3.
 
 ## Les trois blocs de compétences du BTS SIO
 

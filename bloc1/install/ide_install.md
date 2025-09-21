@@ -8,42 +8,6 @@ Pour développer en Java, vous aurez besoin de :
 
 La procédure suivante décrit l'installation de ces éléments sur Windows. Si vous utilisez un autre système d'exploitation, vous devrez adapter la procédure en conséquence.
 
-## Préparation
-
-Pour éviter d'avoir des problèmes de compatibilité, il faut auparavant désinstaller toutes les versions précédentes du JDK qui pourraient être installées sur votre système.
-
-### Suppression des JDK
-
-- rendez-vous dans les paramètres de Windows
-- _Applications_
-- recherchez « jdk » dans la liste de programmes installés
-- supprimez tous les JDK trouvés
-
-### Suppression des entrées dans les variables d'environnement
-
-La variable d'environnement `PATH` sur votre système contient un ensemble de répertoires qui sont parcourus lorsque le système tente de localiser un programme. Il se peut que les JDK désinstallés aient posé des entrées dans cette variable `PATH` qui n'ont pas été supprimées. Il est important de les supprimer pour éviter tout problème d'incompatibilité par la suite. Il est tout à fait possible et même probable que vous ne trouviez rien à supprimer du tout. Il faut quand même vérifier :
-
-- rendez-vous dans les paramètres de Windows
-- dans la recherche de paramètres, tapez « environ », localisez et ouvrez la fenêtre de consultation des _variables d'environnement_
-- dans la liste des entrées « *variables utilisateur* » :
-  - **ATTENTION : dans ce qui suit, ne supprimez surtout pas l'ensemble de la variable PATH**
-  - localisez la variable `PATH` (si elle existe)
-  - modifiez-la (bouton) ; une liste de chemin s'affiche
-  - vérifiez dans la liste des chemins si certains contiennent une référence à un JDK (ils contiendront la chaîne de caractères « jdk »)
-  - supprimez-les tous le cas échéant
-- toujours dans la liste des entrées « variables utilisateur » :
-  - localisez la variable `JAVA_HOME` (si elle existe)
-  - supprimez la variable complètement
-- dans la liste des entrées « *variables système* » :
-  - répétez le processus précédent pour les chemins contenus dans la variable `PATH`
-  - répétez le processus précédent pour la variable `JAVA_HOME` (si elle existe)
-
-Par exemple, sur le système suivant, ces trois entrées doivent être considérées et modifiées avant installation :
-
-![variables d'environnement](assets/variables_environnement_java.png)
-
-Le système est maintenant prêt à accueillir un nouveau JDK.
-
 ## Visual Studio Code (VS Code)
 
 Nous allons installer un _bundle_ (ensemble logiciel) pour Windows qui comprend tout ce dont on a besoin :
@@ -66,7 +30,10 @@ NB : à la première ouverture de VS Code, on vous propose l'installation d'un
 
 ## Créer un projet Java
 
-- une fois reconnecté, ouvrez VS Code
+Une fois reconnecté, ouvrez VS Code. Nous allons créer un projet Java. Deux procédures sont ici données, avec ou sans Maven. Maven est un outil de gestion de projet et de dépendances très utilisé en Java. Utilisez la procédure 1 avec Maven par défaut. Si cela ne fonctionne pas, utilisez la procédure 2 sans Maven.
+
+### Procédure 1 (avec Maven)
+
 - appuyez sur `F1` (il se peut que vous deviez utiliser conjointement la touche `Fn` de votre laptop)
   - ce racourci ouvre la **palette de commande**
   - c'est un outil très utile sous VS Code qui permet d'accéder à toutes les fonctionnalités par simple recherche
@@ -90,9 +57,9 @@ NB : à la première ouverture de VS Code, on vous propose l'installation d'un
 - confirmez le résumé des informations données avec `Entrée`
 - le projet est créé ; cliquez sur `Open` dans la pop-up qui s'ouvre ; VS Code se relance et le nouveau projet est chargé
   - le projet n'est pas créé (mention `BUILD FAILED` dans le terminal) ? Votre installation de Java est incorrecte ; consultez la section « Ça ne fonctionne pas ? » plus bas
-- Indiquez que vous « faites confiance » aux auteurs de des fichiers (il peut être prudent de ne pas « faire confiance » à du code quelconque téléchargé sur Internet : cela vous permettra d'examiner le programme sans pouvoir l'exécuter, car il pourrait contenir du code malicieux)
+- si demandé,indiquez que vous « faites confiance » aux auteurs de des fichiers (il peut être prudent de ne pas « faire confiance » à du code quelconque téléchargé sur Internet : cela vous permettra d'examiner le programme sans pouvoir l'exécuter, car il pourrait contenir du code malicieux)
 - laissez toujours quelques secondes à VS Code pour charger le projet en arrière-plan (la pop-up en bas à droite doit se fermer)
-- **par la suite, lorsque vous ouvrirez de nouveau un projet existant (`File / Open Folder...`), veillez à toujours bien sélectionner le répertoire contenant le projet, et non pas un répertoire plus haut ou bien un répertoire plus bas** ; il faut toujours qu'un projet Java ouvert indique une architecture de répertoire comme ceci sur le panneau `Explorer` :
+- **par la suite, lorsque vous ouvrirez de nouveau un projet existant (`File / Open Folder...`), veillez à toujours bien sélectionner le répertoire contenant le projet, et non pas un répertoire plus haut ou bien un répertoire plus bas** ; vous ne devez pas non plus ouvrir seulement un fichier java avec VS Code : il faut toujours ouvrir le répertoire complet du projet. Il faut toujours qu'un projet Java ouvert indique une architecture de répertoire ressemblant à ceci sur le panneau `Explorer` :
 
 ![architecture_repertoires_java](assets/architecture_repertoires_java.png)
 
@@ -105,6 +72,21 @@ Notez bien que le répertoire `src`, par exemple, se trouve un niveau au-dessous
 - ouverture un cran trop bas :
 
 ![architecture_repertoires_mauvais_2](assets/architecture_repertoires_mauvais2.png)
+
+### Procédure 2 (sans Maven)
+
+- appuyez sur `F1` pour ouvrir la **palette de commande**
+- tapez `java`
+- localisez et lancez `Create Java Project` dans la liste qui s'affiche
+- sélectionnez `No Build Tools`
+- le système ouvre une fenêtre pour vous laisser choisir le répertoire dans lequel sera stocké votre nouveau projet
+- parcourez l'arborescence pour localiser votre répertoire de projets Java (par exemple, vous pourriez avoir un répertoire `Java` sur votre bureau Windows)
+- **Attention** : ne créez pas un répertoire spécifique pour le nouveau projet (ce sera fait automatiquement) ; indiquez juste votre répertoire de projets Java
+- après avoir sélectionné le répertoire, une nouvelle fenêtre s'ouvre pour vous laisser indiquer le nom du projet ; tapez par exemple `introjava`
+- une nouvelle fenêtre VS Code s'ouvre avec votre projet
+- si demandé, indiquez que vous « faites confiance » aux auteurs de des fichiers (il peut être prudent de ne pas « faire confiance » à du code quelconque téléchargé sur Internet : cela vous permettra d'examiner le programme sans pouvoir l'exécuter, car il pourrait contenir du code malicieux)
+- laissez toujours quelques secondes à VS Code pour charger le projet en arrière-plan (la pop-up en bas à droite doit se fermer)
+- **par la suite, lorsque vous ouvrirez de nouveau un projet existant (`File / Open Folder...`), veillez à toujours bien sélectionner le répertoire contenant le projet, et non pas un répertoire plus haut, ou bien un répertoire plus bas** (voir détails dans la procédure 1) ; vous ne devez pas non plus ouvrir seulement un fichier java avec VS Code : il faut toujours ouvrir le répertoire complet du projet 
 
 ## Lancement du programme
 
@@ -132,8 +114,9 @@ Travailler avec un thème de couleurs qui nous plaît et qui soulage les yeux es
   - une variable `JAVA_HOME` dans les variables d'environnement utilisateur (ou bien système)
   - le répertoire pointant vers votre JDK fraîchement installé dans la variable d'environnement utilisateur `PATH` (ou bien système)
 - N'oubliez pas de vous déconnecter/reconnecter après chaque modification
+- Avez-vous ouvert le bon répertoire de projet comme spécifié à la fin de la procédure 1 ? Regardez bien quel niveau est ouvert, et vérifiez que vous n'avez pas juste ouver un fichier Java seul
 - Le programme ne se lance pas :
-  - avez-vous des erreurs de compilation (soulignées en rougedans le code) ? Il faut les corriger.
+  - avez-vous des erreurs de compilation (soulignées en rouge dans le code) ? Il faut les corriger.
   - avez-vous bien ouvert le bon répertoire de projet comme spécifié ci-dessus ? Regardez bien quel niveau est ouvert.
   - essayez `F1` / `Java: Force Java Compilation` (indiquez `Full` ensuite)
   - essayez de relancer VS Code (`F1` / `Reload Window`) ; parfois, cela résout le problème tout seul
@@ -142,7 +125,7 @@ Travailler avec un thème de couleurs qui nous plaît et qui soulage les yeux es
   - les erreurs de code ne sont pas soulignées ;
   - au contraire il trouve des erreurs là où il n'y en a pas ;
   - au lancement, il vous dit : `Could not find or load main class` ;
-  - potentiellement à essayer pour d'autres problèmes inexpliqués (ça ne peut pas faire de mal de toute façon !)
+  - potentiellement à essayer pour d'autres problèmes inexpliqués (ça ne peut pas faire de mal de toute façon)
 - Les erreurs persistent ? Utilisons les fichiers de _logs_ pour en savoir plus :
   - dans les paramètres, recherchez `java.trace.server` et positionnez l'option sur `verbose`
   - puis, si c'est l'extension Java qui ne se lance pas correctement, examinez les logs `vscode-java` :
@@ -151,3 +134,39 @@ Travailler avec un thème de couleurs qui nous plaît et qui soulage les yeux es
   - vous pouvez aussi examiner les logs du serveur de langage Java et les logs de l'extension Java :
     - `F1` / `Java: Open Java Language Server log file`
     - `F1` / `Java: Open Java Extension log file`
+
+## Gros problèmes ? Réinstallation propre du JDK
+
+Une solution radicale en cas de problème persistant est de supprimer tous les JDK installés et de repartir sur une installation propre.
+
+### Désinstallation des JDK
+
+- rendez-vous dans les paramètres de Windows
+- _Applications_
+- recherchez « jdk » dans la liste de programmes installés
+- supprimez tous les JDK trouvés
+
+### Suppression des entrées dans les variables d'environnement
+
+La variable d'environnement `PATH` sur votre système contient un ensemble de répertoires qui sont parcourus lorsque le système tente de localiser un programme. Il se peut que les JDK désinstallés aient posé des entrées dans cette variable `PATH` qui n'ont pas été supprimées. Il est important de les supprimer pour éviter tout problème d'incompatibilité par la suite. Il est tout à fait possible et même probable que vous ne trouviez rien à supprimer du tout. Il faut quand même vérifier :
+
+- rendez-vous dans les paramètres de Windows
+- dans la recherche de paramètres, tapez « environ », localisez et ouvrez la fenêtre de consultation des _variables d'environnement_
+- dans la liste des entrées « *variables utilisateur* » :
+  - **ATTENTION : dans ce qui suit, ne supprimez surtout pas l'ensemble de la variable PATH**
+  - localisez la variable `PATH` (si elle existe)
+  - modifiez-la (bouton) ; une liste de chemin s'affiche
+  - vérifiez dans la liste des chemins si certains contiennent une référence à un JDK (ils contiendront la chaîne de caractères « jdk »)
+  - supprimez-les tous le cas échéant
+- toujours dans la liste des entrées « variables utilisateur » :
+  - localisez la variable `JAVA_HOME` (si elle existe)
+  - supprimez la variable complètement
+- dans la liste des entrées « *variables système* » :
+  - répétez le processus précédent pour les chemins contenus dans la variable `PATH`
+  - répétez le processus précédent pour la variable `JAVA_HOME` (si elle existe)
+
+Par exemple, sur le système suivant, ces trois entrées doivent être considérées et modifiées avant installation :
+
+![variables d'environnement](../assets/variables_environnement_java.png)
+
+Le système est maintenant prêt à accueillir un nouveau JDK. Relancez le programme d'installation téléchargé précédemment. Le programme va réinstaller un JDK et configurer les variables d'environnement correctement.

@@ -1,4 +1,4 @@
-# Utilisation de Git et GitHub
+# Installation, configuration et utilisation de Git/GitHub
 
 ## Installation de Git
 
@@ -32,7 +32,7 @@ GitHub est une plateforme de développement collaboratif utilisant Git. Cela va 
 
   - `git config --global user.name "Jean Dupont"`
 
-- Cette seconde commande permet de configurer votre email (remplacez « jean.dupont@gmail.com » par votre adresse email utilisée sur GitHub)
+- Cette seconde commande permet de configurer votre email (indiquez votre email utilisé sur GitHub)
 
   - `git config --global user.email jean.dupont@gmail.com`
 
@@ -68,7 +68,7 @@ Une fois que votre projet est sous gestion de version avec Git, celui-ci va auto
 
 - **Message de *Commit*** : quand l'index est prêt, vous allez procéder à ce qu'on appelle un *commit* ; un *commit* enregistre les modifications de l'index dans l'historique de votre projet. Vous devez d'abord saisir un message de *commit* dans le champ prévu à cet effet (tout en haut du panneau). Ce message doit être court mais explicite sur les modifications apportées (exemple : « *exercice 3 fini* » ou « *correction du bug d'affichage* »).
 
-- ***Commit*** : cliquez sur l'icône `Commit ✓` pour valider le *commit* : à ce moment, **les modifications du commit sont sauvegardées localement, mais pas sur GitHub**.
+- ***Commit*** : cliquez sur l'icône `✓ Commit` pour valider le *commit* : à ce moment, **les modifications du commit sont sauvegardées localement, mais pas sur GitHub**.
 
 - **Synchronisation avec GitHub** : pour envoyer les modifications sur GitHub, cliquez sur le bouton « *Synchronize Changes* ». À ce moment, **les modifications du commit sont visibles sur GitHub**.
 

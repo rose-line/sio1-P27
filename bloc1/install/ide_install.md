@@ -1,4 +1,4 @@
-# Mise en place de l'environnement de programmation
+# Mise en place de l'environnement de programmation (Visual Studio Code + Java)
 
 Pour développer en Java, vous aurez besoin de :
 

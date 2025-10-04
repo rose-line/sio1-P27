@@ -70,6 +70,6 @@ Une fois que votre projet est sous gestion de version avec Git, celui-ci va auto
 
 - ***Commit*** : cliquez sur l'icône `✓ Commit` pour valider le *commit* : à ce moment, **les modifications du commit sont sauvegardées localement, mais pas sur GitHub**.
 
-- **Synchronisation avec GitHub** : pour envoyer les modifications sur GitHub, cliquez sur le bouton « *Synchronize Changes* ». À ce moment, **les modifications du commit sont visibles sur GitHub**.
+- **Synchronisation avec GitHub** : pour envoyer les modifications sur GitHub, cliquez sur le bouton « *Sync Changes* ». À ce moment, **les modifications du commit sont visibles sur GitHub**.
 
 - Note : il arrivera que vous oubliiez de renseigner le message de *commit* avant de cliquer sur l'icône `Commit ✓` ; dans ce cas, VS Code ouvrira un fichier, et vous devrez ajouter votre message de *commit* à la fin de ce fichier. Sauvegardez et fermez le fichier. Votre *commit* sera alors effectué.

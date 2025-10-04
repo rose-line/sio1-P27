@@ -109,6 +109,8 @@ La classe [`Character`](https://docs.oracle.com/en/java/javase/13/docs/api/java.
 
 ### 6. Nombre de lettres
 
+CET EXERCICE NE PEUT ÊTRE RÉALISÉ SANS AVOIR VU LES BOUCLES (Module 3)
+
 Écrire une méthode `nbLettres` qui retourne le nombre de lettres (majuscules et minuscules) que contient une string donnée.
 
 `nbLettres("Salut a toi, l'Espagnol !")` retournera `18`
@@ -180,6 +182,8 @@ Vous noterez que l'on ne construit pas un objet de type `YearMonth` en utilisant
 
 ### 12. Accumulation : sommePairsEtMax
 
+CET EXERCICE NE PEUT ÊTRE RÉALISÉ SANS AVOIR VU LES BOUCLES (Module 3)
+
 Écrire une méthode `sommePairsEtMax` qui prend en paramètre un objet `Scanner` pour la console. La méthode doit d'abord demander à l'utilisateur le nombre d'entiers qu'elle devra traiter, puis demander chacun de ces entiers. Quand l'utilisateur a fini d'entrer les nombres, la méthode doit afficher la somme de tous les nombres pairs qui ont été entrés, ainsi que le plus grand de tous les nombres.
 
 Deux exemples de sortie :
@@ -201,7 +205,7 @@ Somme des nombres pairs = 0, plus grand nombre = 3
 
 ---
 
-### 13. Inverse : suite
+### 13. Inverse
 
 Écrire une méthode `deuxSens` qui vérifie si une string passée en paramètre peut se lire dans les deux sens. La méthode sera insensible à la casse (rappel : casse = distinction majuscules/minuscules).
 
@@ -215,7 +219,7 @@ System.out.println(deuxSens("Éric notre valet alla te laver ton ciré")); // 'f
 
 ---
 
-### 14. Inverse : encore
+### 14. Inverse : suite
 
 Même exercice mais cette fois la méthode sera insensible aux espaces et à la ponctuation. Le dernier exemple affichera donc `true`.
 

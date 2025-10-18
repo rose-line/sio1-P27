@@ -60,9 +60,9 @@ C'est la première étape : faire gérer votre projet par Git et le relier à 
 
 ### Suivi des modifications avec Git
 
-Une fois que votre projet est sous gestion de version avec Git, celui-ci va automatiquement surveiller les modifications apportées aux fichiers. À présent, vous allez régulièrement (à chaque fin d'exercice, ou même à chaque petite avancée significative) sauvegarder vos modifications localement (*commit*) puis les envoyer sur GitHub (*synchronisation*).
+Une fois que votre projet est sous gestion de version avec Git, celui-ci va automatiquement surveiller les modifications apportées aux fichiers. À présent, vous allez régulièrement (à chaque fin d'exercice, ou même à chaque petite avancée significative) sauvegarder vos modifications localement (*commit*) puis les envoyer sur GitHub (*synchronisation*, *push*).
 
-- **Suivi des modifications** : à chaque modification de fichier, le panneau de gestion de version indique qu'il y a des modifications non suivies (un chiffre rouge indique le nombre de fichiers modifiés) ; vous pouvez tester en modifiant légèrement un fichier du projet (ajoutez une ligne vide par exemple) ; le fichier modifié apparaît dans la liste des modifications du panneau.
+- **Suivi des modifications** : à chaque modification de fichier, le panneau de gestion de version indique qu'il y a des modifications non suivies (un chiffre indique le nombre de fichiers modifiés) ; vous pouvez tester en modifiant légèrement un fichier du projet (ajoutez une ligne vide par exemple) ; le fichier modifié apparaît dans la liste des modifications du panneau.
 
 - **Ajout à l'index** : cliquez sur l'icône `+` à côté de chaque fichier modifié pour indiquer que vous souhaitez que cette modification soit prise en compte dans la prochaine sauvegarde (on dit qu'on « ajoute le fichier à l'index »).
 
@@ -70,6 +70,60 @@ Une fois que votre projet est sous gestion de version avec Git, celui-ci va auto
 
 - ***Commit*** : cliquez sur l'icône `✓ Commit` pour valider le *commit* : à ce moment, **les modifications du commit sont sauvegardées localement, mais pas sur GitHub**.
 
-- **Synchronisation avec GitHub** : pour envoyer les modifications sur GitHub, cliquez sur le bouton « *Sync Changes* ». À ce moment, **les modifications du commit sont visibles sur GitHub**.
+- **Synchronisation avec GitHub** : pour envoyer les modifications sur GitHub (***push***), cliquez sur le bouton « *Sync Changes* ». À ce moment, **les modifications du commit sont visibles sur GitHub**.
 
 - Note : il arrivera que vous oubliiez de renseigner le message de *commit* avant de cliquer sur l'icône `Commit ✓` ; dans ce cas, VS Code ouvrira un fichier, et vous devrez ajouter votre message de *commit* à la fin de ce fichier. Sauvegardez et fermez le fichier. Votre *commit* sera alors effectué.
+
+### Résolution de problèmes Git / GitHub
+
+- _Lors du commit, VS Code ouvre un éditeur et votre commit ne semble pas effectué ?_ Vous avez oublié le message de commit avant de cliquer sur le bouton.
+
+  - => mettez le message en première ligne du fichier ouvert, sauvegardez et fermez l'onglet. Le commit est alors effectué.
+
+- _Lors du commit, une erreur est affichée ?_ Vos informations personnelles ne sont peut-être pas configurées sur Git. Exécutez les commandes indiquées dans la section « *Configuration locale de Git* » plus haut.
+
+- _Vous ne voyez pas les modifications sur le dépôt lorsque vous faites un _push_ ?_
+
+  - Êtes-vous sur le bon dépôt en ligne ? Dans un terminal ouvert dans le répertoire de votre projet, vérifiez l'adresse de votre dépôt avec la commande : `git remote -v`
+
+  - Êtes-vous bien connecté à Internet et à votre compte GitHub ?
+
+  - Le _push_ s'est-il bien passé ? Vérifiez les erreurs éventuelles indiquées.
+
+### Procédure de rendu sur GitHub Classroom
+
+Lorsque vous devez rendre un exercice via GitHub Classroom, vous devez suivre la procédure suivante :
+
+- Vous devez d'abord être connecté à votre compte GitHub
+
+- Rendez-vous sur le lien d'invitation sur GitHub Classroom qui vous a été fourni spécifiquement pour cet exercice
+
+- Vous devrez ensuite sélectionner votre nom dans la liste des étudiants (ne vous trompez pas ;)
+
+- Un dépôt GitHub privé sera automatiquement créé pour vous
+
+- Cliquez sur le lien du dépôt créé pour accéder à votre exercice
+
+- Copier l'URL du dépôt => bouton vert « Code » sur la page d'accueil du dépôt puis copiez le lien https (se termine par `.git`)
+
+- Ouvrez une ligne de commande sur votre ordinateur et déplacez-vous à l'endroit où vous souhaitez avoir le répertoire de l'exercice en local (ex. : `C:\java\exercices`)
+
+- En ligne de commande, clonez le dépôt sur votre machine : `git clone <url_du_dépôt>` (remplacez `<url_du_dépôt>` par l'URL que vous avez copié précédemment)
+
+- Un répertoire représentant le dépôt local est créé à l'endroit où vous avez exécuté la commande
+
+- Ouvrez bien le *répertoire complet* sous VS Code (**pas juste un fichier**) ; vous travaillerez en local sur votre machine comme d'habitude
+
+- Utilisez le fichier README fourni pour répondre aux questions 1, 2 et 3
+
+- Utilisez le fichier `App.java` fourni pour écrire votre code Java (question 4)
+
+- Quand vous avez terminé tout ou partie de l'exercice, vous devez comme d'habitude _committer_ en local et _push_ sur le dépôt GitHub
+
+  - revoir si besoin la section _Suivi des modifications avec Git_ plus haut dans cette page
+
+  - il est de votre charge de vérifier en ligne que vos modifications sont bien présentes sur le dépôt GitHub Classroom
+
+  - **il est inutile de m'envoyer un lien ou un message** : je pourrai accéder aux rendus directement via GitHub Classroom
+
+- Aucune correction ne sera faite avant la date limite de rendu : vous pouvez donc faire des _push_ intermédiaires autant que vous le souhaitez _avant_ la date limite

@@ -68,6 +68,8 @@ Quelles sont les données que vous allez stocker dans des variables ? Pour cha
   - son rôle
   - cette donnée est-elle récupérée auprès de l'utilisateur ou entièrement gérée par le programme ?
 
+Répondez sur le fichier README.md fourni dans le dépôt GitHub Classroom (voir ci-dessous).
+
 ### Question 2
 
 Quelles structures de contrôle (conditions et/ou boucles) allez-vous utiliser ? Pour chaque structure, précisez :
@@ -75,16 +77,22 @@ Quelles structures de contrôle (conditions et/ou boucles) allez-vous utiliser�
   - son rôle
   - pourquoi ce type de structure est adapté à ce rôle ?
 
+Répondez sur le fichier README.md.
+
 ### Question 3
 
 Écrire l'algorithme complet de ce programme en pseudo-code (en français).
 
+Répondez sur le fichier README.md.
+
 ### Question 4
 
-Implémentez ce programme en Java. Veillez à bien reproduire le format demandé.
+Implémentez l'algorithme en Java. Veillez à bien reproduire le format de sortie (format d'affichage) demandé.
 
-### Rendu
+Le code est à écrire dans le fichier `src/App.java` fourni.
 
-Le rendu est à faire sur GitHub, dans un dépôt GitHub Classroom. **Vous ne devez pas créer le dépôt vous-même sur votre compte**, mais utiliser la procédure décrite dans la section _Rendu sur GitHub Classroom_ de la page [Installation, configuration et utilisation de Git/GitHub](../install/git_github_install.md). Le système va créer automatiquement un dépôt privé pour vous dans lequel vous déposerez votre code.
+### Rendu sur GitHub Classroom
 
-Voici le lien d'invitation à utiliser pendant la procédure : https://classroom.github.com/a/4j2ajBfM
+Le rendu est à faire sur GitHub, dans un dépôt GitHub Classroom. **Vous ne devez pas créer le dépôt vous-même sur votre compte**, mais utiliser la procédure décrite dans la section _Procédure de rendu sur GitHub Classroom_ de la page [Installation, configuration et utilisation de Git/GitHub](../install/git_github_install.md). Le système va créer automatiquement un dépôt privé pour vous dans lequel vous déposerez votre code.
+
+Voici le lien d'invitation à utiliser dans la procédure : https://classroom.github.com/a/4j2ajBfM

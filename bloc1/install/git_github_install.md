@@ -92,7 +92,7 @@ Une fois que votre projet est sous gestion de version avec Git, celui-ci va auto
 
 ### Procédure de rendu sur GitHub Classroom
 
-Lorsque vous devez rendre un exercice via GitHub Classroom, vous devez suivre la procédure suivante :
+Lorsque vous devez rendre un exercice/TP via GitHub Classroom, vous devez suivre la procédure suivante :
 
 - Vous devez d'abord être connecté à votre compte GitHub
 
@@ -114,11 +114,11 @@ Lorsque vous devez rendre un exercice via GitHub Classroom, vous devez suivre la
 
 - Ouvrez bien le *répertoire complet* sous VS Code (**pas juste un fichier**) ; vous travaillerez en local sur votre machine comme d'habitude
 
-- Utilisez le fichier README fourni pour répondre aux questions 1, 2 et 3
+- Utilisez le fichier README fourni pour répondre aux questions qui demandent une réponse en texte et/ou une argumentation
 
-- Utilisez le fichier `App.java` fourni pour écrire votre code Java (question 4)
+- Utilisez les fichiers de code déjà fournis pour compléter le code (cas d'exercices de programmation)
 
-- Quand vous avez terminé tout ou partie de l'exercice, vous devez comme d'habitude _committer_ en local et _push_ sur le dépôt GitHub
+- Quand vous avez terminé tout ou partie de l'exercice/TP, vous devez comme d'habitude _committer_ en local et _push_ sur le dépôt GitHub
 
   - revoir si besoin la section _Suivi des modifications avec Git_ plus haut dans cette page
 

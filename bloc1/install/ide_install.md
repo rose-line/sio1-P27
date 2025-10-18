@@ -134,9 +134,17 @@ Notez bien que le répertoire `src`, par exemple, se trouve un niveau au-dessous
 
 - Le programme se lance avec l'appui sur la touche `F5` du clavier (il se peut que vous deviez utiliser conjointement la touche `Fn` de votre laptop)
 
-- Au premier lancement, le pare-feu de Windows vous demandera à quels réseaux doit avoir accès VS Code ; cochez les réseaux privés, mais pas les réseaux publics
+  - vous devez avoir le programme principal ouvert dans l'éditeur (fichier `.java` contenant la méthode `main`)
 
-- Notez que le programme, tel qu'il est construit ici, ne fait absolument rien ; vérifiez juste que, lorsque vous le lancez, aucune erreur ne s'affiche dans le terminal
+  - vous pouvez aussi lancer le programme avec `Run / Start Debugging` dans le menu principal
+
+  - ou bien en cliquant sur l'icône de lecture en haut à droite
+
+- Au premier lancement, le pare-feu de Windows vous demandera à quels réseaux doit avoir accès ce projet ; cochez les réseaux privés, mais pas les réseaux publics
+
+- Notez que le programme, tel qu'il est construit ici, ne fait pas grand-chose ; vérifiez juste que, lorsque vous le lancez, aucune erreur ne s'affiche dans le terminal
+
+  - si tout va bien, votre environnement de programmation est prêt
 
 ## Configuration supplémentaire utile
 

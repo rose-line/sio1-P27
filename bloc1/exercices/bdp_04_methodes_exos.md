@@ -1,16 +1,16 @@
-== Exercices M4 - Méthodes
+# Exercices M4 - Méthodes
 
-=== Préambule
+## Préambule
 
 Cette série d'exercices vise à vous faire pratiquer la définition et l'appel de méthodes. On considère ici que les étapes préalables de découpage en sous-problèmes doivent déjà avoir été faites pour exposer l'intérêt d'implémenter une ou des méthode(s).
 
 Lorsque l'on doit définir une méthode (c'est-à-dire un bout de code qui résoud un sous-problème bien distinct), on se pose d'abord les trois questions suivantes :
 
-==== 1. Comment je nomme cette méthode ?
+### 1. Comment je nomme cette méthode ?
 
 Cette étape est quasiment terminée lorsqu'on aborde la définition d'une méthode suite à un processus de modularisation tel que vu en cours. Le nommage du sous-problème va naturellement mener au nom de la méthode correspondante (par exemple : « Réaliser l'appareil » va devenir la méthode `réaliserAppareil`). Le nom de la méthode doit indiquer clairement ce qu'elle fait. En général, on commence par un verbe, suivi éventuellement d'un complément : `afficherBienvenue`, `afficherCaracteristiquesCombattant`, `calculerDommages`... On se pose tout simplement la question : « que fait cette méthode ? », on répond synthétiquement en un ou plusieurs mots, et on en fait le nom de la méthode. En Java, on respecte la convention de nommage *camelCase* pour les méthodes : le nom commence par une minuscule, et chaque mot suivant commence par une majuscule, sans espaces ni _underscores_ entre les mots.
 
-==== 2. Quels sont les paramètres de la méthode ?
+### 2. Quels sont les paramètres de la méthode ?
 
 Les *paramètres* constituent ce dont la méthode a besoin pour faire son travail. C'est pour cela qu'on appelle aussi ça des *entrées* ou *paramètres d'entrée*. Parfois, la méthode ne prend pas de paramètres : elle n'a pas besoin que l'appelant lui fournisse quoi que ce soit pour effectuer son travail. Parfois, la méthode a au contraire besoin d'un ou plusieurs paramètres : ce sont les variables pour lesquelles le développeur de la méthode ne peut pas prévoir à l'avance les valeurs, mais qui sont nécessaires pour que la méthode fasse son travail. Par exemple, pour enregistrer un nouveau client dans une base de données, on a besoin de son nom, prénom, adresse, etc.
 
@@ -21,7 +21,7 @@ Au niveau syntaxe :
 * le nom est choisi par le développeur. Comme pour le nom de la méthode, on choisit un nom cohérent, qui reflète ce qu'est ce paramètre. Le nom n'a pas à être le même que celui utilisé pour la variable passée en paramètre lors de l'appel.
 * si la méthode a plusieurs paramètres, ceux-ci sont séparés par des virgules.
 
-==== 3. Quel est le type de retour de la méthode ?
+### 3. Quel est le type de retour de la méthode ?
 
 Le *type de retour* est le type de la variable que la méthode renvoie à l'appelant. Parfois, la méthode ne renvoie rien : elle fait son travail et c'est tout. Parfois, la méthode renvoie une valeur, qui peut être de n'importe quel type (entier, chaîne de caractères, etc.). Par exemple, pour une méthode enregistre un nouveau client dans une base de données, on peut imaginer qu'elle renvoie un booléen pour indiquer si l'opération a réussi (`true`) ou non (`false`).
 
@@ -32,7 +32,7 @@ Au niveau syntaxe :
 * si la méthode renvoie une valeur, *on est obligé de faire un `return`* dans le code pour spécifier la valeur renvoyée ;
 * si la méthode renvoie une valeur, *l'appelant doit récupérer cette valeur* dans une variable lors de l'appel de la méthode.
 
-==== Exemple - Définition d'une méthode pour enregistrer un client
+### Exemple - Définition d'une méthode pour enregistrer un client
 
 Illustrons les trois concepts en même temps avec notre méthode qui enregistre un nouveau client dans une base de données :
 
@@ -46,8 +46,7 @@ Comme on a une valeur de retour, on n'oublie pas de *spécifier le type de retou
 
 Voici ce que ça donne en Java, avec une méthode `main` qui appelle la méthode `enregistrerClient` :
 
-[source,java]
-----
+```java
 public class Main {
   public static void main(String[] args) {
     // Définition des variables pour les informations du client.
@@ -77,21 +76,21 @@ public class Main {
     return insertionOK;  // on renvoie le résultat de l'opération pour que l'appelant puisse l'utiliser
   }
 }
-----
+```
 
-== Exercice - Simulation de combat RPG
+## Exercice - Simulation de combat RPG
 
 L'objectif de cet exercice est d'élaborer progressivement un programme de simulation de combat entre deux personnages de RPG.
 
-=== 1 - Définition et appel d'une méthode simple
+### 1 - Définition et appel d'une méthode simple
 
 Définissez une méthode qui affiche un message d'accueil : « Bienvenue ! ». Appelez cette méthode dans la méthode `main` et testez votre programme.
 
-=== 2 - Méthode avec paramètre
+### 2 - Méthode avec paramètre
 
 Définissez une méthode qui affiche le nom d'un combattant passé en paramètre. Appelez cette méthode dans la méthode `main` (à la suite de la précédente).
 
-=== 3 - Caractéristiques d'un combattant
+### 3 - Caractéristiques d'un combattant
 
 Définissez une méthode qui affiche les caractéristiques d'un combattant. Ces caractéristiques sont les suivantes :
 
@@ -102,35 +101,35 @@ Définissez une méthode qui affiche les caractéristiques d'un combattant. Ces 
 
 Vous définirez vous-mêmes les valeurs pour ces caractéristiques. Appelez la méthode dans la méthode `main` pour la tester.
 
-=== 4 - Dommages aléatoires
+### 4 - Dommages aléatoires
 
 Définissez une méthode qui renvoie un dommage infligé par un combattant à un autre combattant. Pour l'instant, le score est calculé comme ceci : un nombre aléatoire entre 50 et 100. Testez votre méthode en affichant le dommage infligé.
 
-=== 5 - Dommages prenant en compte les combattants
+### 5 - Dommages prenant en compte les combattants
 
 Définissez une méthode qui renvoie les dommages infligés par un combattant à un autre combattant. Cette fois, la méthode va prendre en compte les caractéristiques du combattant :
 
 - utiliser la force du combattant pour calculer une base de dommages (la moitié de la force)
 - utiliser l'agilité du combattant pour déterminer des dommages supplémentaires (un entier aléatoire entre 0 et l'agilité du combattant)
 
-=== 6 - Dommages restreints par l'agilité de l'adversaire
+### 6 - Dommages restreints par l'agilité de l'adversaire
 
 Vous définirez maintenant deux combattants dans la méthode `main`, avec des caractéristiques différentes mais équilibrées. Puis vous modifierez la méthode précédente en prenant en compte l'agilité de l'adversaire :
 
 - utiliser l'agilité de l'adversaire pour déterminer une réduction des dommages (un entier aléatoire entre 0 et l'agilité de l'adversaire)
 
-=== 7 - Combat complet
+### 7 - Combat complet
 
 Simulez un combat entre deux combattants jusqu'à ce que l'un des deux meurt. Vous définirez pour cela une méthode dédiée qui va elle-même utiliser la méthode définie précédemment. Vous afficherez des détails sur chacun des tours du combat et indiquerez qui a gagné à la fin.
 
-=== 8 - Bug ?
+### 8 - Bug ?
 
 Votre programme prend-il bien en compte le fait que, lors d'un tour de combat, un combattant qui vient de mourir ne peut plus infliger de dommage à son adversaire dans le même tour ? Sinon, corrigez le bug.
 
-=== 9 - Qui commence ?
+### 9 - Qui commence ?
 
 Actuellement, c'est sûrement le premier combattant défini qui commence toujours à frapper le premier dans votre programme. Ajoutez une fonctionnalité permettant de déterminer qui commence en fonction des caractéristiques des combattants (par exemple, l'agilité supérieure est avantagée) et, éventuellement, d'un caractère aléatoire.
 
-=== 10 - Évolutions ?
+### 10 - Évolutions ?
 
 Quelles évolutions pourriez-vous apporter à cette simulation ? Des armes offensives/défensives ? Des sorts ? Des décisions prises en cours de combats par interaction avec les utilisateurs ? Analysez la façon dont cela pourrait être implémenté et essayez d'incorporer vos idées à votre programme.

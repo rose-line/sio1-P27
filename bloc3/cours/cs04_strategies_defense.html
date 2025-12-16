@@ -444,12 +444,560 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_stratégies_de_défense">Stratégies de défense</h2>
 <div class="sectionbody">
 <h3 id="_dans_les_très_grandes_lignes" class="discrete"><em>(dans les très grandes lignes)</em></h3>
+<div class="sect2">
+<h3 id="_construire_une_stratégie_de_défense">Construire une stratégie de défense</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>« Solution magique » n&#8217;existe pas en cybersécurité</p>
+</li>
+<li>
+<p>N&#8217;importe quelle couche de protection peut tomber</p>
+</li>
+<li>
+<p>Et on doit supposer qu&#8217;elle <strong>va effectivement</strong> tomber</p>
+</li>
+<li>
+<p>De multiples niveaux de protection doivent être mis en place</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_prévention_vs_détection">Prévention vs. Détection</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Prévention</strong> ? Formidable. <strong>Détection</strong> ? Obligatoire.</p>
+</li>
+<li>
+<p><strong>Détection &#8658; réaction</strong> ; on peut « minimiser les dégâts »</p>
+</li>
+<li>
+<p>Quand une attaque aura lieu avec succès, alors votre système de prévention sera <em>déjà en défaut</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Mais <strong>pas de détection &#8658; pas de réaction</strong> ; les conséquences peuvent alors être très graves</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Évidemment, si aucune réponse (réaction) n&#8217;est prévue, le système de détection n&#8217;a qu&#8217;une valeur tout relative</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_un_point_sur_les_scores">Un point sur les scores</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>On estime que <strong>90 % des attaques ne sont pas détectées</strong></p>
+</li>
+<li>
+<p>Parmi les 10 % restants, elles sont restées <strong>indétectées pendant en moyenne 20 mois</strong></p>
+</li>
+<li>
+<p>En général, en SSI, le rapport d&#8217;investissements prévention/détection est beaucoup trop élevé</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flux_entrants_vs_flux_sortants">Flux entrants vs. flux sortants</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Plus de 95 % de surveillance se fait sur les flux entrants</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Exfiltration de données ?</p>
+</li>
+<li>
+<p>Centres de <em>Command &amp; Control</em> (C2) ?</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>De nouveau, on se concentre trop sur la prévention (principalement flux entrants) et pas assez sur la détection (beaucoup de flux sortants)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_notion_de_risque">Notion de risque</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Sécurité = gestion de risques sur les ressources critiques</p>
+</li>
+<li>
+<p>Cela induit les notions de :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>menaces</strong> : potentiel de dommage pouvant arriver</p>
+</li>
+<li>
+<p><strong>vulnérabilités</strong> : failles qui permettent à ces menaces de se concrétiser</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Risque = Menace x Vulnérabilité</strong> (pour l&#8217;instant)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>on ne peut contrôler que les vulnérabilités</strong></p>
+</li>
+<li>
+<p>vulnérabilité est <strong>sans importance si aucune menace associée</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gestion_des_risques_101">Gestion des risques 101</h3>
+<div class="paragraph text-left">
+<p>Avant de passer une minute ou de dépenser un euro sur une solution quelconque de cybersécu, toujours se poser ces 3 questions :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Quel est le risque auquel ça répond ?</p>
+</li>
+<li>
+<p>Est-ce le risque le plus élevé actuellement ?</p>
+</li>
+<li>
+<p>Cette solution a-t-elle le meilleur rapport coût/efficacité ?</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dicp">DICP</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_dicp_2">DICP</h3>
+<div class="imageblock">
+<div class="content">
+<img src="assets/defense/dicp.png" alt="background">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dicp_disponibilité"><strong>D</strong>ICP - Disponibilité</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>On se protège contre <strong>l&#8217;interruption d&#8217;un service</strong> pour les personnes qui sont censées pouvoir y accéder (notion associée : <strong>accessibilité</strong>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ressource doit être utilisable en des temps de réponse acceptables</p>
+</li>
+<li>
+<p>en interne : dimensionner correctement (redondance) et gérer efficacement</p>
+</li>
+<li>
+<p>en externe : fournisseurs de service s&#8217;engagent à fournir une certaine <strong>continuité de service</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Mise en place d&#8217;une <strong>politique de sauvegarde</strong> (rapport coût/risque)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dicp_intégrité">D<strong>I</strong>CP - Intégrité</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>On se protège contre <strong>la modification (voire la destruction) non souhaitée d&#8217;informations</strong> &#8658; L&#8217;information est <strong>authentique et complète</strong></p>
+</li>
+<li>
+<p>On parle donc ici de <strong>protection en écriture</strong></p>
+</li>
+<li>
+<p>Problèmes liés :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>systèmes d&#8217;exploitation &amp; applications</p>
+</li>
+<li>
+<p>transmission des données</p>
+</li>
+<li>
+<p>procédures de sauvegarde</p>
+</li>
+<li>
+<p>hashing &amp; cryptographie</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dicp_confidentialité">DI<strong>C</strong>P - Confidentialité</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>On se protège contre <strong>la divulgation d&#8217;informations</strong> en dehors des personnes autorisées</p>
+<div class="ulist">
+<ul>
+<li>
+<p>&#8658; Maintien du secret (<strong>non-divulgation</strong>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>On parle donc ici de <strong>protection en lecture</strong></p>
+</li>
+<li>
+<p>Problèmes liés :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>contrôle d&#8217;accès</p>
+</li>
+<li>
+<p>cryptographie</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_priorisation_dic">Priorisation DIC</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Il y a toujours un secteur plus critique que les autres en fonction des organisations :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Confidentialité</strong> : pharmaceutiques, publiques</p>
+</li>
+<li>
+<p><strong>Intégrité</strong> : finances</p>
+</li>
+<li>
+<p><strong>Disponibilité</strong> : e-commerce</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Il faut <strong>aligner les besoins réels de l&#8217;organisation</strong> avec les mesures de sécurité prises</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_contrôle_des_accès">Contrôle des accès</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Identification</strong> : de qui s&#8217;agit-il ? (identifiant, <em>login</em>&#8230;&#8203;)</p>
+</li>
+<li>
+<p><strong>Authentification</strong> : vérification de cette identité (mot de passe, biométrie, etc.)</p>
+</li>
+<li>
+<p><strong>Autorisations</strong> : qui a le droit de faire quoi ?</p>
+</li>
+<li>
+<p><strong>Contrôle des accès</strong> : rendu possible grâce aux 3 notions précédentes</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dicp_preuve">DIC<strong>P</strong> - Preuve</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Identification / authentification participent donc à confidentialité + intégrité, mais aussi à la notion de <strong>preuve</strong> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>non-répudiation</strong> : ne pouvoir nier qu&#8217;un événement a eu lieu</p>
+</li>
+<li>
+<p><strong>imputabilité</strong> : attribution d&#8217;une action à une entité donnée</p>
+</li>
+<li>
+<p><strong>traçabilité</strong> : reconstitution des événements à partir de données enregistrées (<em>logging</em>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_preuve_pour_quoi_faire">Preuve - Pour quoi faire ?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Gestion des incidents (reconstitution d&#8217;attaque, <em>forensics</em>&#8230;&#8203;)</p>
+</li>
+<li>
+<p>Analyse des comportements utilisateurs (optimisation)</p>
+</li>
+<li>
+<p>Audit (diagnostic de sécurité)</p>
+</li>
+<li>
+<p>Systèmes de surveillance (détection d&#8217;incidents), IA</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_approches_défensives">Approches défensives</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Protection uniforme</p>
+</li>
+<li>
+<p>Zones protégées</p>
+</li>
+<li>
+<p>Protection centrée sur l&#8217;information</p>
+</li>
+<li>
+<p>Protection orientée sur les vecteurs d&#8217;attaque</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_protection_uniforme">Protection uniforme</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Approche très commune, bon point de départ</p>
+</li>
+<li>
+<p>Toutes les parties de l&#8217;organisation reçoivent une protection du même type</p>
+<div class="ulist">
+<ul>
+<li>
+<p>pare-feu, VPN, IDS, antivirus, patching&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tous les systèmes sont traités de la même façon</p>
+</li>
+<li>
+<p>Limitation : tous les systèmes n&#8217;ont pas la même criticité</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zones_protégées">Zones protégées</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Créer un environnement très segmenté</p>
+</li>
+<li>
+<p>Les « unités de travail » plus critiques sont compartimentées</p>
+</li>
+<li>
+<p>Les accès à ces segments critiques sont très restreints</p>
+</li>
+<li>
+<p>Mise en place de pare-feux internes + VLANs / ACLs</p>
+</li>
+<li>
+<p>Les zones protégées <strong>n&#8217;empêchent pas les brèches externes</strong> : elles contrôlent les dommages internes</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_protection_centrée_sur_linformation">Protection centrée sur l&#8217;information</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Identification des ressources critiques et protection par couches</p>
+<div class="ulist">
+<ul>
+<li>
+<p>les données sont accessibles par les applications</p>
+</li>
+<li>
+<p>les applications résident sur des hôtes</p>
+</li>
+<li>
+<p>les hôtes communiquent par les réseaux</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Idée : les contrôles d&#8217;accès « accompagnent » les données, peu importe où elles sont utilisées</p>
+</li>
+<li>
+<p>Approche extensible (s&#8217;adapte à la quantité, à la répartition et au flux des données)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_protection_orientée_vecteurs_dattaque">Protection orientée vecteurs d&#8217;attaque</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>La menace a besoin d&#8217;un <strong>vecteur</strong> pour atteindre la vulnérabilité</p>
+</li>
+<li>
+<p>Principe : empêcher la menace d&#8217;utiliser le vecteur</p>
+</li>
+<li>
+<p>Exemples de vecteurs et de mesures associées :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>clé USB &#8658; désactiver USB</p>
+</li>
+<li>
+<p>pièces jointes email &#8658; bloquer ou scanner</p>
+</li>
+<li>
+<p>usurpation d&#8217;email &#8658; vérifier l&#8217;adresse IP auprès du serveur</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_réparation_après_incident">Réparation après incident</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Se contenter de <em>fix</em> les problèmes détectés : pas efficace</p>
+<div class="ulist">
+<ul>
+<li>
+<p>car alors on traite les symptômes, pas la maladie</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Compromission &#8658; <em>backdoors</em> et autres malwares potentiels</p>
+</li>
+<li>
+<p>Quand c&#8217;est possible, bonne stratégie : <strong>tout réinstaller de zéro</strong></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fact">FACT</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>On ne peut pas protéger ce qu&#8217;on ne connaît pas</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gestion_de_configuration">Gestion de configuration</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>On ne peut pas gérer les vulnérabilités sans connaître le Système d&#8217;Informations</p>
+</li>
+<li>
+<p>Comme pour la détection d&#8217;intrusion, on va vouloir « détecter » et gérer les modifications du système</p>
+</li>
+<li>
+<p><strong>Gestion de configuration</strong> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>description technique du SI (logiciels, matériel, doc&#8230;&#8203;) &#8658; document de base</p>
+</li>
+<li>
+<p>modifications qui sont faites au fil du temps ? &#8658; modification du document de base</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_résumé">Résumé</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>100 % sécurité n&#8217;existe pas</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>par nature, les solutions préventives ne suffisent pas</p>
+</li>
+<li>
+<p>la détection <strong>doit</strong> venir en soutien</p>
+</li>
+<li>
+<p>tout est question de <strong>gestion de risques</strong></p>
+</li>
+<li>
+<p>sans rentrer en conflit avec les processus métier</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Flux <strong>entrants</strong> / <strong>Prévention</strong>, Flux <strong>sortants</strong> / <strong>Détection</strong></p>
+</li>
+<li>
+<p><strong>DIC + P</strong></p>
+</li>
+<li>
+<p>Différentes approches défensives, non mutuellement exclusives</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-12-16 09:19:01 +0100
+Last updated 2025-12-16 09:37:08 +0100
 </div>
 </div>
 </body>

@@ -444,12 +444,810 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_attaques_et_vulnérabilités">Attaques et vulnérabilités</h2>
 <div class="sectionbody">
 <h3 id="_ingénierie_sociale" class="discrete">Ingénierie sociale</h3>
+<div class="sect2">
+<h3 id="_ingénierie_sociale_2">Ingénierie sociale ?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>L&#8217;ingénierie sociale</strong> est l&#8217;art d&#8217;amener les gens à fournir des informations a priori non-invasive ou sans importance (voire à leur faire exécuter des actions), pour récolter petit à petit des informations</p>
+<div class="ulist">
+<ul>
+<li>
+<p>en gagnant leur confiance</p>
+</li>
+<li>
+<p>et en réduisant leurs défenses</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cette technique est souvent combinée avec d&#8217;autres pour finalement atteindre la cible (données&#8230;&#8203;)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_techniques_dingénierie_sociale">Techniques d&#8217;ingénierie sociale</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Toutes la série de techniques présentées ici font partie de la catégorie « ingénierie sociale » ou y sont étroitement associées</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hameçonnage">Hameçonnage</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Objectif</em> : obtenir des <strong>informations importantes</strong> (identifiant, mots de passe, infos de carte de crédit&#8230;&#8203;)</p>
+</li>
+<li>
+<p><em>Moyen principal</em> : faire remplir à la cible ces informations sur un site web contrefait</p>
+</li>
+<li>
+<p>Vecteurs d&#8217;attaque :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>email (souvent combiné avec <em>spoofing</em>)</p>
+</li>
+<li>
+<p>messagerie instantanée</p>
+</li>
+<li>
+<p>SMS (<em>Smishing</em>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_smishing">Smishing</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>SMS Phishing</em> : hameçonnage par SMS</p>
+</li>
+<li>
+<p>Notamment très populaire pour les cibles plus jeunes</p>
+<div class="ulist">
+<ul>
+<li>
+<p>un jeune de 18-24 ans envoie et reçoit environ 4000 messages par mois</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_smishing_exemple">Smishing - exemple</h3>
+<div class="imageblock">
+<div class="content">
+<img src="assets/social_engineering/smishing_credit_agricole.png" alt="smishing credit agricole">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_volume_efficacité">Volume = efficacité</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Les techniques précédentes ont un taux de réussite souvent très faible</p>
+</li>
+<li>
+<p>Pour être efficace, les attaquants misent sur l&#8217;envoi en masse</p>
+</li>
+<li>
+<p>Ex : supposons un taux de réussite d&#8217;une campagne de <em>phishing</em> à 0,01 % (seule 1 personne sur 10000 se fait avoir)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>envoi de 10 millions de messages (<em>spamming</em>)</p>
+</li>
+<li>
+<p>résultat : 1000 victimes, largement suffisant pour rendre la campagne rentable</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>D&#8217;autres techniques sont plus ciblées et misent beaucoup moins sur la quantité</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vishing">Vishing</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Voice Phishing</em> : hameçonnage par téléphone</p>
+</li>
+<li>
+<p>Les attaques de type <em>vishing</em> fonctionnent bien lorsque l&#8217;organisation dispose de plusieurs départements relativement dispersés (informatique, commercial, RH&#8230;&#8203;)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>entre en contact avec un service</p>
+</li>
+<li>
+<p>récolte des informations « insignifiantes »</p>
+</li>
+<li>
+<p>appelle plus tard un autre service et utilise les infos récoltées pour gagner la confiance</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hameçonnage_ciblé">Hameçonnage ciblé</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>&#8658; <strong><em>Spear Phishing</em></strong></p>
+</li>
+<li>
+<p>Comme le <em>phishing</em>, mais des recherches spécifiques ont été faites sur la cible</p>
+</li>
+<li>
+<p>Le message, sur le fond et sur la forme, paraît provenir d&#8217;un expéditeur de confiance</p>
+</li>
+<li>
+<p>Potentiellement très difficile à détecter car forgé pour tromper tous les « radars à <em>phishing</em> » qui nous alertent habituellement, que l&#8217;on soit formé ou pas</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fraude_au_président">Fraude au président</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Whaling</em> (« chasse à la baleine »)</p>
+</li>
+<li>
+<p><em>Phishing</em> en se faisant passer pour un dirigeant haut placé dans l&#8217;organisation</p>
+</li>
+<li>
+<p>Cible notamment les employés qui ont des accès privilégiés</p>
+<div class="ulist">
+<ul>
+<li>
+<p>&#8658; transfert d&#8217;argent</p>
+</li>
+<li>
+<p>&#8658; divulgation d&#8217;informations comptables ou financières</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fraude_au_président_exemple">Fraude au président - exemple</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>10 février 2022 : une comptable de la société de production Les Films Worso (Paris) reçoit un e-mail de sa directrice</p>
+</li>
+<li>
+<p>La directrice annonce qu&#8217;elle compte procéder à une offre publique d&#8217;achat à hauteur de 5 millions €</p>
+</li>
+<li>
+<p>La comptable est ensuite contactée par un avocat qui se présente au nom de la gérante de la société, afin de finaliser l&#8217;offre de rachat ; il lui demande la discrétion afin que la transaction puisse se faire sans encombre</p>
+</li>
+<li>
+<p>La comptable effectue par la suite 8 virements bancaires sur des comptes en Croatie pour un montant total de 2,5 millions&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dumpster_diving">Dumpster Diving</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Fouille de poubelles !</p>
+</li>
+<li>
+<p>Tout type de document important doit être détruit avant d&#8217;être jeté</p>
+<div class="ulist">
+<ul>
+<li>
+<p>identifiants de connexion</p>
+</li>
+<li>
+<p>données personnelles/sensibles</p>
+</li>
+<li>
+<p>données administratives/comptables</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_shoulder_surfing">Shoulder Surfing</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>« Espionnage par dessus l&#8217;épaule »</p>
+</li>
+<li>
+<p>On essaie typiquement de récupérer des identifiants de connexion en regardant l&#8217;écran et le clavier de la cible</p>
+</li>
+<li>
+<p>Contre-mesures :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>mots de passe masqués</p>
+</li>
+<li>
+<p>filtres de confidentialité</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pharming">Pharming</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>« Dévoiement » en français</p>
+</li>
+<li>
+<p>Rediriger le trafic destiné à un site web vers un site malveillant</p>
+<div class="ulist">
+<ul>
+<li>
+<p>empoisonnement DNS</p>
+</li>
+<li>
+<p>injection de fichier <em>hosts</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Généralement utilisé pour <em>credential harvesting</em> (voir ci-après)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_récolte_didentifiants_de_connexion">Récolte d&#8217;identifiants de connexion</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>&#8658; <em>Credential Harvesting</em></p>
+</li>
+<li>
+<p>Identifiants de connexion = login + mot de passe</p>
+</li>
+<li>
+<p>On parle ici d&#8217;un grand nombre d&#8217;identifiants, et généralement pas d&#8217;une attaque ciblée</p>
+</li>
+<li>
+<p>De nombreuses techniques d&#8217;ingénierie sociale sont utilisées, notamment associées au <em>spamming</em></p>
+</li>
+<li>
+<p>Différents types d&#8217;attaques techniques peuvent également être efficaces pour attaquer des sites ou des réseaux entiers</p>
+</li>
+<li>
+<p>Les identifiants sont ensuite revendus sur le <em>Darknet Market</em> ou utilisés en <em>credential stuffing</em></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_credential_stuffing">Credential Stuffing</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Tentative d&#8217;utilisation en masse d&#8217;identifiants de connexion</p>
+<div class="ulist">
+<ul>
+<li>
+<p>généralement obtenus par <em>credential harvesting</em> ou sur le <em>Darknet</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>On essaie chaque couple id/mdp sur un grand nombre de sites</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tailgaiting">Tailgaiting</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Profiter de l&#8217;entrée authentifiée d&#8217;une personne (grille, badge&#8230;&#8203;) à un bâtiment ou une zone restreinte pour entrer avec elle</p>
+<div class="ulist">
+<ul>
+<li>
+<p>les gens veulent aider et être polis !</p>
+</li>
+<li>
+<p>les ingénieurs sociaux le savent !</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Il faut apprendre aux usagers à refuser poliment l&#8217;accès commun, en rappelant qu&#8217;un système de badge permet :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>de s&#8217;assurer que les personnes présentes sont autorisées</p>
+</li>
+<li>
+<p><strong>mais aussi</strong> de savoir qui est dans le bâtiment en cas de sinistre</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_prepending">Prepending</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Ajout de mentions (<code>@patrice</code>) sur les réseaux sociaux</p>
+<div class="ulist">
+<ul>
+<li>
+<p>tweets, forums, IM, commentaires de publication&#8230;&#8203;</p>
+</li>
+<li>
+<p>entraîne une augmentation immédiate du niveau d&#8217;engagement et d&#8217;intérêt de la cible</p>
+</li>
+<li>
+<p>semble personnel mais souvent automatisé (+ IA)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>De plus en plus utilisé sous forme de messages privés (Discord !)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_usurpation_didentité">Usurpation d&#8217;identité</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Identity fraud</em> ou <em>identity theft</em></p>
+</li>
+<li>
+<p>Se faire passer pour quelqu&#8217;un d&#8217;autre sur un système ou auprès de quelqu&#8217;un</p>
+</li>
+<li>
+<p>Obtenue par différentes techniques, pas seulement l&#8217;ingénierie sociale :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>vol d&#8217;identifiant / récolte d&#8217;identifiants</p>
+</li>
+<li>
+<p>malware</p>
+</li>
+<li>
+<p>capture de paquets et <em>replaying</em> sur un réseau&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_attaque_de_point_deau">Attaque de point d&#8217;eau</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Watering Hole Attack</em></p>
+</li>
+<li>
+<p>Cible les sites que les utilisateurs d&#8217;une organisation spécifique utilisent régulièrement</p>
+<div class="ulist">
+<ul>
+<li>
+<p>le site est piégé par l&#8217;attaquant</p>
+</li>
+<li>
+<p>tous ceux qui le visitent sont infectés</p>
+</li>
+<li>
+<p>le compte pro ou personnel de la victime est alors compromis (l&#8217;attaquant a des accès)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Le malware en question peut avoir différents objectifs (vol de données, scan de vulnérabilités, exploits, porte dérobée, mouvement latéral&#8230;&#8203;)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_typosquattage">Typosquattage</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Typosquatting</em> ou <em>URL Hijacking</em></p>
+</li>
+<li>
+<p>S&#8217;appuie sur le fait que les usagers font fréquemment des erreurs en tapant une URL (erreurs de frappe ou autre)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ex : <code>goggle.com</code>, <code>creditmutuel.org</code>, <code>disqord.com</code>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>L&#8217;attaquant enregistre (achète) tous les noms de domaines proches du site cible qui sont libres</p>
+</li>
+<li>
+<p>La page affichée est une copie de la page d&#8217;accueil du site original</p>
+</li>
+<li>
+<p>Objectifs : <em>credential harvesting</em>, revenus de publicité&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sécurité_physique">Sécurité physique</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Protection physique des équipements et des accès : fondamental</p>
+<div class="ulist">
+<ul>
+<li>
+<p>vandalisme, vol, sabotage</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Accès à un appareil (mobile, station&#8230;&#8203;) ?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>implique <strong>accès à ses données</strong></p>
+</li>
+<li>
+<p>voire au <strong>réseau d&#8217;entreprise</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conséquences_potentielles">Conséquences potentielles</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Entreprises : 70 % atteintes de compromission de données sur l&#8217;année passée (dont <strong>66 % dues à accès physiques non autorisés</strong>)</p>
+</li>
+<li>
+<p><strong><em>Quoi ?</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>surtout documents papier et ordinateurs portables</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong><em>Où ?</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>bureaux et véhicules</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong><em>Comment ?</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>principalement et évidemment par <strong><em>social engineering</em></strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sécurité_physique_bonnes_pratiques">Sécurité physique - Bonnes pratiques</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Mise sous clé des équipements et documents importants</p>
+</li>
+<li>
+<p>Retirer immédiatement les documents imprimés</p>
+</li>
+<li>
+<p>Détruire les documents inutiles</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sécurité_des_laptops">Sécurité des laptops</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Même niveau de sécurité que votre portefeuille</p>
+</li>
+<li>
+<p>Ne pas le laisser traîner dans des endroits douteux</p>
+</li>
+<li>
+<p>Cadenas pour portables</p>
+</li>
+<li>
+<p>Au minimum, verrouiller la session</p>
+</li>
+<li>
+<p>Attention aux regards indiscrets</p>
+<div class="ulist">
+<ul>
+<li>
+<p>réduire luminosité</p>
+</li>
+<li>
+<p>utiliser un filtre</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_efficacité_de_lingénierie_sociale">Efficacité de l&#8217;ingénierie sociale</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>L&#8217;efficacité des techniques d&#8217;ingénierie sociale reposent sur quelques principes :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>autorité</p>
+</li>
+<li>
+<p>intimidation</p>
+</li>
+<li>
+<p>consensus / acceptation sociale</p>
+</li>
+<li>
+<p>familiarité / attachement</p>
+</li>
+<li>
+<p>confiance</p>
+</li>
+<li>
+<p>caractère d&#8217;urgence / peur</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_principe_dautorité">Principe d&#8217;autorité</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>L&#8217;attaquant paraît savoir de quoi il parle, et / ou a des connaissances certaines de l&#8217;organisation / du projet en cours&#8230;&#8203;</p>
+</li>
+<li>
+<p>La position d&#8217;autorité se gagne en utilisant :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>du jargon technique</p>
+</li>
+<li>
+<p>des mots-clés actuellement populaires dans l&#8217;organisation (<em>buzzwords</em>)</p>
+</li>
+<li>
+<p>des connaissances de systèmes ou d&#8217;applications spécifiques</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Ces connaissances sont acquises petit à petit (<em>vishing</em>&#8230;&#8203;)</p>
+</li>
+<li>
+<p>La position d&#8217;autorité va alors en général être utilisée pour obtenir une information plus importante</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_principe_dintimidation">Principe d&#8217;intimidation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Certains principes (autorité, confiance&#8230;&#8203;) permettent ensuite d&#8217;imposer des choses à la cible</p>
+<div class="ulist">
+<ul>
+<li>
+<p>menace d&#8217;actions négatives notamment</p>
+</li>
+<li>
+<p>souvent combiné au principe d&#8217;urgence</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consensus_acceptation_sociale">Consensus / acceptation sociale</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Une personne agit plus facilement quand elle pense être en accord avec la majorité</p>
+<div class="ulist">
+<ul>
+<li>
+<p>cela peut lui faire prendre des choix qu&#8217;elle ne prendrait pas en temps normal</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cf expérience de Asch : <code>dailymotion.com/video/x738r9</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_familiarité_attachement">Familiarité / Attachement</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Repose sur le fait que les gens achètent et utilisent des choses qu&#8217;ils connaissent et apprécient déjà</p>
+</li>
+<li>
+<p>C&#8217;est le même principe avec les personnes : on a plus tendance à se rapprocher des gens qui ont l&#8217;air plus « comme nous », ou en tout cas qui sont perçus comme tel</p>
+<div class="ulist">
+<ul>
+<li>
+<p>et on sera plus disposés à leur révéler des informations, à leur tenir la porte, etc.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_confiance">Confiance</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Évidemment, on va plus facilement agir / répondre lorsque l&#8217;on a confiance en la personne qui demande</p>
+<div class="ulist">
+<ul>
+<li>
+<p>base du bon commercial : acquérir la confiance du client est essentiel</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Moyens :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>principes de familiarité et d&#8217;autorité</p>
+</li>
+<li>
+<p><em>name dropping</em></p>
+</li>
+<li>
+<p><em>shoulder surfing</em></p>
+</li>
+<li>
+<p><em>dumpster diving</em></p>
+</li>
+<li>
+<p>tout ce qui peut avoir l&#8217;air de dire : « je fais partie du <em>gang</em> »</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_peur_urgence">Peur / Urgence</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>On force la cible en lui faisant croire qu&#8217;ils doivent agir rapidement</p>
+</li>
+<li>
+<p>Par incitation négative : non-action &#8658; punition</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>votre compte va être fermé</em></p>
+</li>
+<li>
+<p><em>vous passerez à 19 % d&#8217;intérêts de remboursement mensuels avec effet immédiat</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Mais aussi par incitation positive : action &#8658; récompense</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>cette offre expire ce soir !</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tout ce qui doit être résolu dans l&#8217;urgence est suspect</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-12-16 09:18:36 +0100
+Last updated 2025-12-16 09:34:16 +0100
 </div>
 </div>
 </body>

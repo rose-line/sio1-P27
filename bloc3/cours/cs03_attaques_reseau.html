@@ -444,12 +444,353 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_attaques_et_vulnérabilités">Attaques et vulnérabilités</h2>
 <div class="sectionbody">
 <h3 id="_attaques_réseau" class="discrete">Attaques réseau</h3>
+<div class="sect2">
+<h3 id="_man_in_the_middle">Man in The Middle</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>MiTM : « homme du milieu »</p>
+</li>
+<li>
+<p>Désigne tout type d&#8217;attaque dans laquelle une transmission est intercepté, voire modifiée</p>
+</li>
+<li>
+<p>L&#8217;attaquant « s&#8217;insère » dans la conversation entre les deux parties communiquantes</p>
+</li>
+<li>
+<p>Ces deux parties n&#8217;ont pas conscience de l&#8217;attaque</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_attaque_wi_fi_jamming">Attaque Wi-FI - Jamming</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Envoi de signaux de bruit excessif sur les fréquences Wi-Fi, rendant les canaux Wi-Fi impraticables</p>
+</li>
+<li>
+<p>Requiert un équipement spécifique (souvent de fabrication-maison)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wi_fi_point_daccès_pirate">Wi-Fi - Point d&#8217;accès pirate</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Attaque de type MiTM</p>
+</li>
+<li>
+<p>Mise en place d&#8217;un point d&#8217;accès Wi-Fi non-autorisé (<em>rogue</em>) dans l&#8217;organisation (ou à proximité)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>vol ou altération de données</p>
+</li>
+<li>
+<p>peut être combiné avec une attaque de <em>jamming</em>/interférence pour brouiller les points d&#8217;accès légitimes</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_variation_jumeau_malveillant_evil_twin">Variation - Jumeau malveillant (Evil Twin)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Point d&#8217;accès <em>rogue</em> qui se fait passer pour légitime</p>
+<div class="ulist">
+<ul>
+<li>
+<p>utilisation du même SSID</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Peut se « déguiser » en portail captif malveillant : imite le portail captif légitime de l&#8217;organisation pour récupérer des identifiants de connexion</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bluejacking">Bluejacking</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Envoi de messages / données à l&#8217;appareil victime via la technologie Bluetooth</p>
+</li>
+<li>
+<p>Typiquement une vCard contenant un message dans le champ nom par l&#8217;intermédiaire du protocole OBEX (<em>OBjectEXchange</em>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>l&#8217;appareil cible doit avoir son module Bluetooth activé en mode découverte</p>
+</li>
+<li>
+<p>proximité nécessaire</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Pas de danger réel, principalement utilisé en tant que « jeu »</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bluesnarfing">Bluesnarfing</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Inverse du <em>Bluejacking</em> : cette fois les données sont extraites depuis l&#8217;appareil cible</p>
+<div class="ulist">
+<ul>
+<li>
+<p>liste de contacts, photos, messages, emails&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Il faut donc intégrer les vulnérabilités associées à la technologie Bluetooth dans la politique de sécurité de l&#8217;organisation</p>
+</li>
+<li>
+<p>D&#8217;autres technologies (NFC) peuvent également être vulnérables à des attaque de proximité</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dissociation">Dissociation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Création d&#8217;un scénario de type Déni de Service (<em>DoS</em>) sur un réseau sans fil</p>
+</li>
+<li>
+<p>Technique : envoi de frame de dissociation <em>spoofée</em> sur le point d&#8217;accès</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Le point d&#8217;accès pense que l&#8217;appareil s&#8217;est dé-authentifié et le déconnecte</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dissociation_avec_aircrack_ng">Dissociation avec Aircrack-ng</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Aircrack-ng est une suite d&#8217;utilitaires pour tester un réseau Wi-Fi</p>
+</li>
+<li>
+<p>Aireplay-ng est l&#8217;utilitaire qui permet d&#8217;injecter des frames dans les transmissions</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aireplay_ng_exemple">Aireplay-ng - Exemple</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ aireplay-ng -0 1 -a 00:14:6C:7E:40:80 -c 00:0F:B5:AE:CE:9D ath0</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>-0</code> : code pour la dé-authentification</p>
+</li>
+<li>
+<p><code>1</code> : nombre de dé-authentification à envoyer</p>
+</li>
+<li>
+<p><code>-a adresse_MAC</code> : adresse du point d&#8217;accès</p>
+</li>
+<li>
+<p><code>-c adresse_MAC</code> : adresse du client à dé-authentifier</p>
+</li>
+<li>
+<p><code>ath0</code> : nom de l&#8217;interface réseau</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_standards_de_chiffrement_wi_fi">Standards de chiffrement Wi-Fi</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Les standards :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>WEP</p>
+</li>
+<li>
+<p>WPA</p>
+</li>
+<li>
+<p>WPA2</p>
+</li>
+<li>
+<p>WPA3</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_attaques_de_vecteur_dinitialisation_vi">Attaques de vecteur d&#8217;initialisation (VI)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Un vecteur d&#8217;initialisation est une séquence de bits envoyée avec le premier bloc de données dans un envoi chiffré</p>
+</li>
+<li>
+<p>Certains protocoles de chiffrement plus faibles ont des IV courts se répétant fréquemment</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ex : WEP, IV de 24 bits - en sniffant suffisamment de paquets Wi-Fi, on peut trouver cette IV et obtenir un accès</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_standards_plus_sûrs">Standards plus sûrs</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>WPA-TKIP est une évolution de WEP mais des vulnérabilités existent également &#8658; à éviter si possible</p>
+</li>
+<li>
+<p>WPA2 (AES-CCMP) est considéré comme sûr</p>
+</li>
+<li>
+<p>WPA3 n&#8217;a pas encore été adopté largement</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_man_in_the_browser">Man in the Browser</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Un malware (de type cheval de Troie) est installé sur la machine cible</p>
+<div class="ulist">
+<ul>
+<li>
+<p>s&#8217;exécute avec le navigateur (extension, JavaScript ou autre mécanisme)</p>
+</li>
+<li>
+<p>quand un site connu vulnérable est visité, le malware agit en tant qu&#8217;entité MiTM et capture / détourne / modifie les données</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Le milieu bancaire considère ce type d&#8217;attaque comme l&#8217;une des ses toutes premières menaces</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_empoisonnement_arp">Empoisonnement ARP</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Plus précisément : empoisonnement du <strong>cache</strong> ARP</p>
+</li>
+<li>
+<p>Aussi appelé <em>ARP Spoofing</em></p>
+</li>
+<li>
+<p>ARP : <em>Address Resolution Protocol</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>au sein d&#8217;un réseau, permet : adresse IP &#8658; adresse MAC</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_empoisonnement_arp_technique">Empoisonnement ARP - Technique</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>L&#8217;attaquant A envoie de faux messages ARP qui communiquent aux autres machines du LAN sa propre adresse MAC associée à l&#8217;IP d&#8217;une machine M du réseau</p>
+<div class="ulist">
+<ul>
+<li>
+<p>lorsqu&#8217;une machine veut communiquer avec M dont elle connaît l&#8217;IP, elle envoie en réalité son message à A</p>
+</li>
+<li>
+<p>particulièrement efficace si on se fait passer pour une passerelle</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_usurpation_dadresse_ip">Usurpation d&#8217;adresse IP</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>IP Spoofing</em></p>
+</li>
+<li>
+<p>Fait de modifier son adresse IP source</p>
+</li>
+<li>
+<p>Il est également possible de spoofer une adresse MAC</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ddos">DDoS</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Distributed Denial of Service</em> (attaque en déni de service distribuée)</p>
+</li>
+<li>
+<p>Attaque de grande ampleur (nécessite une grande puissance)</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-12-16 09:18:52 +0100
+Last updated 2025-12-16 09:35:46 +0100
 </div>
 </div>
 </body>

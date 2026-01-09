@@ -10,6 +10,10 @@ Les sections suivantes décrivent le contenu attendu dans le rapport. Quel que s
 
 Les contributions de chacun des membres de l'équipe doivent être clairement indiquées.
 
+## Journal de bord
+
+Un journal de bord doit être inclus. Il détaille les activités de chaque membre de l'équipe lors de chaque séance, les tâches effectuées, le temps passé, les difficultés rencontrées, ou toute autre remarque jugée pertinente.
+
 ## Analyse des besoins
 
 À partir du cahier des charges (très verbeux), vous produirez un document qui synthétisera le plus simplement possible l'ensemble des besoins exprimés.

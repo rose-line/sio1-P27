@@ -26,7 +26,7 @@ Après deux années de réorganisations internes, tant au niveau du personnel qu
 
 ## Équipes
 
-Vous vous constituerez en équipes de 2 à 4 membres. Les équipes auront accès à leur propre dépôt GitHub Classroom (équipes à mettre en place sur le [lien GH Classroom]().
+Vous vous constituerez en équipes de 2 à 4 membres. Les équipes auront accès à leur propre dépôt GitHub Classroom (équipes à mettre en place sur le [lien GH Classroom](https://classroom.github.com/a/REKTd-s0).
 
 ## Notation
 

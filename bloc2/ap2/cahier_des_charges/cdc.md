@@ -228,17 +228,15 @@ La sélection d'un mois pourra être facilitée par l'IHM. Il est possible de pr
 4. Le système affiche le détail de la fiche de frais (frais forfaitisés et hors-forfait)
 5. L’utilisateur actualise les informations des frais forfaitisés.
 6. Le système indique que la modification a été prise en compte et affiche les informations actualisées.
-7. L’utilisateur demande la suppression des lignes de frais hors-forfait non valides
-8. Le système modifie le libellé en ajoutant en début le texte « REFUSÉ : ».
-9. L'utilisateur valide la fiche.
-10. Le système passe la fiche à l’état « Validée » et met à jour la date de modification de la fiche.
+7. L’utilisateur valide ou refuse des lignes de frais hors-forfaits, ou encore les reporte au mois suivant.
+8. Le système permet de voir visuellement les lignes acceptées, refusées, et reportées. Pour chaque ligne refusée, le système permet de renseigner un champ pour indiquer la raison du refus.
+9. L'utilisateur peut choisir de valider la fiche, ou d'y revenir plus tard si le travail n'est pas terminé.
+10. Le système passe éventuellement la fiche à l’état « Validée » et met à jour la date de modification de la fiche.
 
 - Exceptions :
 
   - 4-a : Aucune fiche de frais n’existe, le système affiche « Pas de fiche de frais pour ce visiteur ce mois ». Retour au 2
-  - 7.a : L'utilisateur demande le report des frais hors-forfait pour lesquels une facture acquittée n’a pas été reçue dans les temps.
-  - 8.a : Le système ajoute la ligne hors-forfait dans la fiche du mois suivant et la supprime de la fiche courante. Si la fiche du mois suivant n’existe pas, le système génère une nouvelle fiche pour le visiteur en cours de traitement et pour le mois suivant. Cette nouvelle fiche a des valeurs à 0 pour les frais forfaitisés et est dans l’état « Saisie en cours ». Retour au 9
-  - 8.b : le texte ainsi complété dépasse la taille maximale du champ « libelle » : le texte est tronqué par la fin au nombre de caractères du champ « libelle »
+  - 7.a : L'utilisateur demande le report des frais hors-forfait pour lesquels une facture acquittée n’a pas été reçue dans les temps. Ce HF est automatiquement inclus dans l'ensemble des HF de l'état de frais du mois suivant. Si la fiche du mois suivant n’existe pas, le système génère une nouvelle fiche pour le visiteur en cours de traitement et pour le mois suivant. Cette nouvelle fiche a des valeurs à 0 pour les frais forfaitisés et est dans l’état « Saisie en cours ». Retour au 9
 
 - Contraintes : néant
 

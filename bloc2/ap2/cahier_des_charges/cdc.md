@@ -28,7 +28,7 @@ Les équipes du service développement auront à produire puis à fournir les é
 
 Grand poste de dépense, la gestion des frais de déplacement des visiteurs demande un suivi très précis. L’enveloppe annuelle pour ce seul poste s’élève à près de 25 millions d’euros. Il n’est donc pas question de le laisser s’envoler, tout en ne limitant pas les visiteurs à des hôtels de second ordre ou des repas chiches (il en va aussi de l’image de marque du laboratoire et de la motivation des équipes).
 
-Les prix d’hébergement ou de nourriture étant variés d’un lieu à l’autre, d’une région à l’autre, il a été procédé à une évaluation statistique permettant de dégager un montant forfaitaire dans la fourchette haute des dépenses pour chaque type de frais standard : repas midi, relais étape (nuit + repas), nuitée (hôtel seul), kilométrage (remboursement des frais kilométriques, chaque visiteur dispose d'un badge pour le télépéage pour éviter le remboursement de ces petits montants).
+Les prix d’hébergement ou de nourriture étant variés d’un lieu à l’autre, d’une région à l’autre, il a été procédé à une évaluation statistique permettant de dégager un montant forfaitaire dans la fourchette haute des dépenses pour chaque type de frais standard : repas midi, nuitée (hôtel), kilométrage (remboursement des frais kilométriques, chaque visiteur dispose d'un badge pour le télépéage pour éviter le remboursement de ces petits montants).
 
 Le remboursement de l'ensemble des frais engagés par les visiteurs s’organise mensuellement et donne lieu à une fiche de frais identifiée par le numéro du visiteur et le mois de l’année.
 
@@ -45,11 +45,11 @@ Actuellement, au plus tard le 20 de chaque mois, le service comptable adresse au
 
 #### Saisie et consultation
 
-Après authentification grâce aux identifiants à leur disposition, les visiteurs saisissent les quantités de frais forfaitisés et les frais hors forfait engagés pour le mois écoulé.
+Après authentification grâce aux identifiants à leur disposition, les visiteurs saisissent les quantités de frais forfaitisés et les frais hors-forfait engagés pour le mois écoulé.
 
 Ils ont accès en modification à la fiche tout au long du mois et peuvent y ajouter de nouvelles données ou supprimer des éléments saisis.
 
-Les fiches de frais saisies peuvent être consultées par un visiteur jusqu’à 12 mois en arrière (au mois d’août 2023, on peut consulter des frais engagés de septembre 2022 à août 2023).
+Les fiches de frais saisies peuvent être consultées par un visiteur jusqu’à 12 mois en arrière (au mois d’août 2025, on peut consulter des frais engagés de août 2024 à juillet 2025).
 
 #### Clôture
 
@@ -64,9 +64,9 @@ Ainsi, une fiche du mois N-1 est toujours clôturée entre le 1er et le 10 (incl
 
 Entre le 10 et le 20 du mois suivant la saisie par les visiteurs, le service comptabilité opère une validation des fiches.
 
-Les comptables contrôlent que les frais forfaitisés sont conformes : nombre de jours enregistrés ne dépassant pas le nombre de jours effectivement travaillés (congés), distance kilométrique cohérente, éventuellement consultation des fiches de comptes-rendus pour s’assurer des déplacements effectifs. En cas d’incohérence ou d’erreur constatée, un contact est pris par téléphone avec le visiteur pour régler le litige. Les valeurs sont corrigées en conséquence sans que ne soit conservée trace de la modification.
+Les comptables contrôlent que les frais forfaitisés sont conformes : nombre de jours enregistrés ne dépassant pas le nombre de jours effectivement travaillés (congés), distance kilométrique cohérente, éventuellement consultation des fiches de comptes-rendus pour s’assurer des déplacements effectifs. En cas d’incohérence ou d’erreur constatée, un contact est pris par téléphone avec le visiteur pour régler le litige. Les valeurs sont corrigées en conséquence directement sur l'état de frais par le comptable.
 
-Pour les frais hors forfait, le service comptable s’appuie sur les factures acquittées adressées par les visiteurs au plus tard le 10 du mois suivant la saisie. Les agents valident ou non (frais non justifiés ou non professionnels par exemple) les éléments de la demande. Un frais non validé est supprimé. Le visiteur doit être tenu informé de cette suppression par les comptables. On n’enregistrera pas la raison du refus mais les documents annotés sont conservés par le service comptable.
+Pour les frais hors-forfait, le service comptable s’appuie sur les factures acquittées adressées par les visiteurs au plus tard le 10 du mois suivant la saisie. Les agents valident ou non (frais non justifiés ou non professionnels par exemple) les éléments de la demande. Un frais non validé reste sur l'état de frais mais est indiqué comme « rejeté », avec un motif de refus spécifié par le comptable. Le visiteur pourra voir, en consultant son historique des 12 derniers mois, les frais forfaitisés effectivement remboursés et les frais hors-forfait rejetés (avec le motif du rejet).
 
 Les éléments reçus après le 10 seront reportés sur le mois ultérieur et seront basculés automatiquement sur la fiche du mois suivant leur saisie (éventuellement créée par l’application si elle ne l’est pas encore) par les comptables.
 
@@ -171,19 +171,19 @@ Les besoins sont exprimés ici à l'aide des cas d'utilisation : le diagramme 
 - Scénario nominal :
 
 1. L’utilisateur demande à saisir un ou plusieurs frais pour le mois courant.
-2. Le système retourne les frais actuellement saisis - éléments forfaitisés et hors forfait - pour le mois courant.
+2. Le système retourne les frais actuellement saisis - éléments forfaitisés et hors-forfait - pour le mois courant.
 3. L’utilisateur ajoute ou modifie éventuellement une ou des valeurs des frais au forfait et demande la validation.
 4. Le système enregistre cette ou ces modifications et retourne ces valeurs à jour.
-5. L’utilisateur ajoute éventuellement un nouveau frais hors forfait en renseignant les différents champs (date d'engagement, libellé, montant) et valide.
-6. Le système enregistre la ligne de frais hors forfait.
+5. L’utilisateur ajoute éventuellement un nouveau frais hors-forfait en renseignant les différents champs (date d'engagement, libellé, montant) et valide.
+6. Le système enregistre la ligne de frais hors-forfait.
 
 - Exceptions :
 
   - 2.a C’est la première saisie pour le mois courant. Si ce n’est pas encore fait, le système clôt la fiche du mois précédent et crée une nouvelle fiche de frais avec des valeurs initialisées à 0. Retour à 3.
   - 4.a. Une valeur modifiée n’est pas numérique : le système indique « Valeur numérique attendue ». Retour à 3.
   - 6.a Un des champs n'est pas renseigné : le système indique : « Le champ date (ou libellé ou montant) doit être renseigné ».
-  - 6.b La date d'engagement des frais hors forfait est invalide : le système indique « La date d'engagement doit être valide ». Retour à 5.
-  - 7.1 L’utilisateur sélectionne un frais hors forfait pour suppression.
+  - 6.b La date d'engagement des frais hors-forfait est invalide : le système indique « La date d'engagement doit être valide ». Retour à 5.
+  - 7.1 L’utilisateur sélectionne un frais hors-forfait pour suppression.
     - 7.2 Le système enregistre cette suppression après une demande de confirmation.
 
 - Contraintes : Néant
@@ -225,10 +225,10 @@ La sélection d'un mois pourra être facilitée par l'IHM. Il est possible de pr
 1. L’utilisateur demande à valider les fiches de frais
 2. Le système propose de choisir le visiteur et le mois concernés
 3. L’utilisateur sélectionne les informations et valide
-4. Le système affiche le détail de la fiche de frais (frais forfaitisés et hors forfait)
+4. Le système affiche le détail de la fiche de frais (frais forfaitisés et hors-forfait)
 5. L’utilisateur actualise les informations des frais forfaitisés.
 6. Le système indique que la modification a été prise en compte et affiche les informations actualisées.
-7. L’utilisateur demande la suppression des lignes de frais hors forfait non valides
+7. L’utilisateur demande la suppression des lignes de frais hors-forfait non valides
 8. Le système modifie le libellé en ajoutant en début le texte « REFUSÉ : ».
 9. L'utilisateur valide la fiche.
 10. Le système passe la fiche à l’état « Validée » et met à jour la date de modification de la fiche.
@@ -236,8 +236,8 @@ La sélection d'un mois pourra être facilitée par l'IHM. Il est possible de pr
 - Exceptions :
 
   - 4-a : Aucune fiche de frais n’existe, le système affiche « Pas de fiche de frais pour ce visiteur ce mois ». Retour au 2
-  - 7.a : L'utilisateur demande le report des frais hors forfait pour lesquels une facture acquittée n’a pas été reçue dans les temps.
-  - 8.a : Le système ajoute la ligne hors forfait dans la fiche du mois suivant et la supprime de la fiche courante. Si la fiche du mois suivant n’existe pas, le système génère une nouvelle fiche pour le visiteur en cours de traitement et pour le mois suivant. Cette nouvelle fiche a des valeurs à 0 pour les frais forfaitisés et est dans l’état « Saisie en cours ». Retour au 9
+  - 7.a : L'utilisateur demande le report des frais hors-forfait pour lesquels une facture acquittée n’a pas été reçue dans les temps.
+  - 8.a : Le système ajoute la ligne hors-forfait dans la fiche du mois suivant et la supprime de la fiche courante. Si la fiche du mois suivant n’existe pas, le système génère une nouvelle fiche pour le visiteur en cours de traitement et pour le mois suivant. Cette nouvelle fiche a des valeurs à 0 pour les frais forfaitisés et est dans l’état « Saisie en cours ». Retour au 9
   - 8.b : le texte ainsi complété dépasse la taille maximale du champ « libelle » : le texte est tronqué par la fin au nombre de caractères du champ « libelle »
 
 - Contraintes : néant
@@ -256,7 +256,7 @@ La sélection d'un mois pourra être facilitée par l'IHM. Il est possible de pr
 1. L’utilisateur demande à suivre le paiement des fiches de frais.
 2. Le système propose de choisir une fiche de frais parmi celles à valider et mises en paiement
 3. L’utilisateur sélectionne les informations et valide
-4. Le système affiche le détail de la fiche de frais (frais forfaitisés et hors forfait)
+4. Le système affiche le détail de la fiche de frais (frais forfaitisés et hors-forfait)
 5. L’utilisateur « Met en paiement » la fiche de frais
 6. Le système modifie l’état de la fiche à « Mise en paiement » et met à jour la date de modification.
 
@@ -278,8 +278,8 @@ On fournira un diagramme entité-association et le schéma relationnel correspon
 
 - Hacher le mot de passe dans la base de données si ce n'est pas déjà fait
 - Au niveau de l'UC « Consulter fiche frais », rendre la fiche de frais facilement imprimable, par exemple proposer la génération d'un fichier PDF.
-- Au niveau des UCs « Saisir fiche frais » et "Consulter fiche frais", prévoir l'affichage des éléments intermédiaires de calcul permettant d'apprécier le montant correspondant à chaque ligne de frais forfaitisé, ainsi que les totaux des éléments forfaitisés et hors forfait, de sorte à être plus proche du document relatif à la fiche de demande de remboursement.
-- Modifier la base de données (et l’application) pour que l’on connaisse le statut d’une ligne de frais hors forfait (point 8 de l’UC « Valider Frais » qui ajoute le texte « REFUSÉ » en début de libellé.
+- Au niveau des UCs « Saisir fiche frais » et "Consulter fiche frais", prévoir l'affichage des éléments intermédiaires de calcul permettant d'apprécier le montant correspondant à chaque ligne de frais forfaitisé, ainsi que les totaux des éléments forfaitisés et hors-forfait, de sorte à être plus proche du document relatif à la fiche de demande de remboursement.
+- Modifier la base de données (et l’application) pour que l’on connaisse le statut d’une ligne de frais hors-forfait (point 8 de l’UC « Valider Frais » qui ajoute le texte « REFUSÉ » en début de libellé.
 
 ## Contraintes du projet
 

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.18">
+<meta name="generator" content="Asciidoctor 2.0.26">
 <title>Cryptographie (2)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -116,7 +116,6 @@ h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title str
 :not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
 pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
 pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
-pre>code{display:block}
 pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
 em em{font-style:normal}
 strong strong{font-weight:400}
@@ -140,7 +139,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #content::before{content:none}
 #header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
 #header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
-#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header>h1:only-child{border-bottom:1px solid #dddddf;padding-bottom:8px}
 #header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
 #header .details span:first-child{margin-left:-.125em}
 #header .details span.email a{color:rgba(0,0,0,.85)}
@@ -162,6 +161,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #toctitle{color:#7a2518;font-size:1.2em}
 @media screen and (min-width:768px){#toctitle{font-size:1.375em}
 body.toc2{padding-left:15em;padding-right:0}
+body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
 #toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
 #toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
 #toc.toc2>ul{font-size:.9em;margin-bottom:0}
@@ -208,19 +208,17 @@ table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
 .admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
 .exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
-.exampleblock>.content>:first-child{margin-top:0}
-.exampleblock>.content>:last-child{margin-bottom:0}
 .sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
-.sidebarblock>:first-child{margin-top:0}
-.sidebarblock>:last-child{margin-bottom:0}
 .sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
-.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content>:first-child,.sidebarblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child,.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
 .literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
 @media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
 @media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
 .literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
 .literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
 .listingblock>.content{position:relative}
+.listingblock pre>code{display:block}
 .listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
 .listingblock:hover code[data-lang]::before{display:block}
 .listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
@@ -330,7 +328,7 @@ a.image{text-decoration:none;display:inline-block}
 a.image object{pointer-events:none}
 sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
 sup.footnote a,sup.footnoteref a{text-decoration:none}
-sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+sup.footnote a:active,sup.footnoteref a:active,#footnotes .footnote a:first-of-type:active{text-decoration:underline}
 #footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
 #footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
 #footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
@@ -393,7 +391,7 @@ b.conum *{color:inherit!important}
 dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
 h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
 p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
-p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
 p{margin-bottom:1.25rem}
 .sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
 .exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
@@ -544,12 +542,290 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_aes_symétrique">AES (symétrique)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Advanced Encryption Standard</em> (<strong>Rijndael</strong>), 2001</p>
+</li>
+<li>
+<p>Vainqueur d&#8217;une compétition lancée fin 1990s</p>
+</li>
+<li>
+<p>Conçu pour taille de clé adaptable (128, 192, 256)</p>
+</li>
+<li>
+<p><strong>Aujourd&#8217;hui : AES-256 considéré comme très sécurisé</strong></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aes_algorithme">AES - Algorithme</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c" data-lang="c">AES(byte in[4*Nb], byte out [4*Nb], word w[Nb*(Nr+1)])
+begin
+  byte state[4,Nb]
+  state = in
+  AddRoundKey(state, w)
+  for round = 1 step 1 to Nr-1
+    SubBytes(state)
+    ShiftRows(state)
+    MixColumns(state)
+    AddRoundKey(state, w+round*Nb)
+  end for
+  SubBytes(state)
+  ShiftRows(state)
+  AddRoundKey(state, w+Nr*Nb)
+  out = state
+end</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rsa_asymétrique">RSA (asymétrique)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Rivest Shamir Adleman</em>, 1977</p>
+</li>
+<li>
+<p>Standard pour le chiffrement asymétrique</p>
+</li>
+<li>
+<p>Non inquiété depuis sa création, et donc <strong>considéré très sûr</strong></p>
+</li>
+<li>
+<p>Consommateur de ressources, ne s&#8217;adapte pas idéalement aux besoins d&#8217;aujourd&#8217;hui (informatique mobile, objets connectés&#8230;&#8203;)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ecc_asymétrique">ECC (asymétrique)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Elliptic Curve Cryptography</em>, divers algos depuis 2004</p>
+</li>
+<li>
+<p>Concurrents de RSA, beaucoup moins gourmands</p>
+</li>
+<li>
+<p>L&#8217;adoption n&#8217;est cependant pas si rapide :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>brevets actifs sur les algos de cette famille (&#8658; frilosité, coût)</p>
+</li>
+<li>
+<p>équivalent à RSA en terme de sécurité pure (&#8658; pas de besoin <em>absolu</em> de remplacer RSA rapidement)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rappels_sur_la_complexité_des_algorithmes">Rappels sur la complexité des algorithmes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Algorithmes symétriques : rapides car correspondent à des problèmes faciles (permutations, substitutions&#8230;&#8203;)</p>
+</li>
+<li>
+<p>Algorithmes asymétriques : lents car correspondent à des problèmes difficiles</p>
+<div class="ulist">
+<ul>
+<li>
+<p>factorisation en nombres premiers (RSA)</p>
+</li>
+<li>
+<p>problème du logarithme discret (El Gamal)</p>
+</li>
+<li>
+<p>Calcul de courbes elliptiques (ECC) (plus rapide cependant)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_équivalence_de_tailles_des_clés_symasym">Équivalence de tailles des clés sym/asym</h3>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 1. <strong>Chiffrement : équivalence de tailles des clés</strong></caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">sécurité</th>
+<th class="tableblock halign-center valign-top">sym</th>
+<th class="tableblock halign-center valign-top">asym (RSA/DH)</th>
+<th class="tableblock halign-center valign-top">asym (ECC)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">80</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1024</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">160</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">112</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3DES</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2048</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">224</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">128</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">AES-128</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3072</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">256</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">192</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">AES-192</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">7680</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">384</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">256</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">AES-256</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">15360</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">512</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_md5_hachage">MD5 (hachage)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Message Digest 5</em>, 1991, 128 bits</p>
+</li>
+<li>
+<p>Considéré <strong>non sécurisé</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>on a pu montrer que, pour certains messages donnés, on pouvait construire des collisions par calcul</p>
+</li>
+<li>
+<p>on considère donc qu&#8217;on pourrait éventuellement réussir à le faire pour n&#8217;importe quel message</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>À éviter aujourd&#8217;hui</strong> pour les contrôles d&#8217;intégrité importants</p>
+</li>
+<li>
+<p>Toujours utilisé notamment pour des vérifications de téléchargement</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sha_1_hachage">SHA-1 (hachage)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Secure Hash Algorithm</em>, 1995, 160 bits</p>
+</li>
+<li>
+<p>Considéré <strong>non sécurisé</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>comme pour MD5, considéré « cassable » depuis 2005</p>
+</li>
+<li>
+<p>2019 : nouvelles avancées qui fragilisent encore l&#8217;algo</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>À éviter aujourd&#8217;hui</strong> pour les contrôles d&#8217;intégrité importants</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sha_2_sha_3_hachage">SHA-2 / SHA-3 (hachage)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>SHA-2</strong> : 2001</p>
+<div class="ulist">
+<ul>
+<li>
+<p>SHA-224 / SHA-256 / SHA-384 / SHA-512</p>
+</li>
+<li>
+<p><strong>Toujours considéré comme sûr</strong>, mais les avancées de 2019 sur SHA-1 sont inquiétantes pour SHA-2 (basé sur le même principe)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>SHA-3</strong> : 2012, basé sur une toute autre technique</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Considéré comme sûr</strong>, mais beaucoup moins utilisé aujourd&#8217;hui que SHA-2</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hmac">HMAC</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Hashed Based Message Authenticated Code</em></p>
+</li>
+<li>
+<p>Un peu particulier, car il requiert une clé secrète avant d&#8217;appliquer le hachage</p>
+</li>
+<li>
+<p>Mais attention : il n&#8217;y a <strong>pas de chiffrement</strong> ici</p>
+<div class="ulist">
+<ul>
+<li>
+<p>permet juste d&#8217;assurer <strong>l&#8217;authenticité</strong> en plus de l&#8217;intégrité</p>
+</li>
+<li>
+<p>Pourquoi ? Car l&#8217;algo demande la clé secrète et vérifie (en plus du contrôle d&#8217;intégrité du hachage) que c&#8217;est bien l&#8217;expéditeur présumé qui est l&#8217;auteur du message</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Nécessite le partage de la clé secrète&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-12-16 09:19:10 +0100
 </div>
 </div>
 </body>

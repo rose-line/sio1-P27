@@ -49,7 +49,19 @@ La documentation du code est intégrée au code source, au [format Javadoc](http
 
 À partir de cette documentation _inline_, on générera également une documentation HTML grâce à l'outil Javadoc (voir le lien ci-dessus également). Cette documentation automatiquement générée sera hébergée avec le reste de votre rapport.
 
-La documentation technique comprendra également une section indiquant comment tester le code fourni : que doit faire le testeur pour lancer l'application dans les conditions souhaitées ? Y a-t-il des outils, des choses particulières à installer ? Notamment, comment charger le jeu de test de données fourni ?
+La génération de Javadoc à partir d'un projet JavaFX pouvant poser quelques problèmes, vous pouvez tester ces commandes :
+
+```bash
+$ mvn dependency:copy-dependencies -DincludeScope=runtime -DoutputDirectory=target/dependency
+$ javadoc \
+  --module-path "target/dependency" \
+  --add-modules javafx.controls,javafx.fxml \
+  -d target/manual-apidocs \
+  --module-source-path src/main/java \
+  -subpackages fr.dampierre
+```
+
+La documentation technique comprendra également une section indiquant comment tester le code fourni : que doit faire le testeur pour lancer l'application dans les conditions souhaitées ? Y a-t-il des outils, des choses particulières à installer ? Comment charger le jeu de test de données fourni ?
 
 ## Support
 

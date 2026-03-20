@@ -8,6 +8,10 @@ Voir [ici](tp-libgdx-presentation.md).
 
 Le [lien d'invitation](https://classroom.github.com/a/BszUAi1G)
 
+## Dépôt du prof
+
+[Dépôt utilisé lors du cours](https://github.com/rose-line/b2-tp-libgdx-p27)
+
 ## À implémenter
 
 À partir du projet de base fourni, implémenter les fonctionnalités suivantes (développement incrémental = on teste à chaque étape) :

@@ -57,7 +57,7 @@ $ javadoc \
   --module-path "target/dependency" \
   --add-modules javafx.controls,javafx.fxml \
   -d target/manual-apidocs \
-  --module-source-path src/main/java \
+  --source-path src/main/java \
   -subpackages fr.dampierre
 ```
 

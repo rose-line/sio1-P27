@@ -228,7 +228,20 @@ Timer.schedule(new Timer.Task() {
 
 ## Ajouter du texte à l'écran
 
+```java
+// Définition (a priori variable d'instance)
+public BitmapFont font;
 
+// Instanciation (a priori dans create())
+font = new BitmapFont();
+// Optionnel : personnalisation de la police
+font.getData().setScale(2f); // taille x2
+font.setColor(Color.YELLOW); // couleur
+
+// Utilisation (a priori dans la méthode de rendu)
+// affichage en coordonnées (100, 100) ici
+game.font.draw(game.batch, "Du texte", 100, 100);
+```
 
 ## Interface utilisateur (UI)
 
@@ -246,5 +259,4 @@ startButton.addListener(new ClickListener() {
   }
 });
 ```
-
 

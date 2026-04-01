@@ -44,14 +44,20 @@
 
 ### Docker Compose
 
-- **Docker Compose** est un outil qui permet de définir et de gérer des applications **multi-conteneurs**.
+- **Docker Compose** est un outil qui permet de définir et de gérer des applications **multi-conteneurs**
 
-- Utilise un fichier YAML pour configurer les services de l'application, puis lancer tous les services avec une seule commande. Cela est particulièrement utile pour des applications qui nécessitent plusieurs composants qui interagissent. Par exemple, GLPI utilise un serveur web pour l'application GLPI et une BDD MySQL.
+- Utilise un fichier **YAML** pour configurer les services de l'application, puis lancer tous les services avec une seule commande
+
+  - Particulièrement utile pour des applications qui nécessitent plusieurs composants qui interagissent
+
+  - Par exemple, GLPI utilise un serveur web pour l'application GLPI et une BDD MySQL
 
 ### Installation de Docker / Docker Compose
 
 - Sous Linux, installer à partir des dépôts de votre distribution (via votre gestionnaire de paquets) :
+
   - package `docker`
+
   - et package `docker-compose`
 
 - Sous Windows : https://www.docker.com/products/docker-desktop/

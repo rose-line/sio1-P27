@@ -5,30 +5,47 @@
 - **GLPI** est une application web open source conçue pour la gestion des ressources informatiques, des services et du support technique.
 
 - Principales fonctionnalités :
+
   - **gestion des actifs informatiques** (ordinateurs, serveurs, imprimantes, licences, etc.)
+
   - **gestion des incidents et des demandes de service** (_ticketing_)
+
   - et bien d'autres (gestion des changements, des utilisateurs, des contrats...)
 
 ## Installation via Docker
 
 ### Docker - Rapide présentation
 
-- **Docker** est une plateforme de « **conteneurisation** » qui permet de créer, déployer et exécuter des applications dans des **conteneurs légers et portables**. Un conteneur est une unité de logiciel qui regroupe le code de l'application et toutes ses dépendances, **garantissant ainsi que l'application fonctionne de manière cohérente dans différents environnements**. Cela simplifie le processus d'installation et de configuration, car tout est déjà prêt à l'emploi.
+- **Docker** est une plateforme de « **conteneurisation** »
+
+  - permet de créer, déployer et exécuter des applications dans des **conteneurs légers et portables**
+
+  - Un **conteneur** est une unité de logiciel qui regroupe le code de l'application et toutes ses dépendances, **garantissant ainsi que l'application fonctionne de manière cohérente dans différents environnements**
+
+  - Cela simplifie le processus d'installation et de configuration, car tout est déjà prêt à l'emploi
 
 - Principe :
+
   - on télécharge une **image préconfigurée** (contenant l'application et ses dépendances)
+
   - depuis un **registre** (comme Docker Hub)
+
   - puis on lance un **conteneur** à partir de cette image
+
   - l'application est alors **prête** à être utilisée
 
 - _Pourquoi pas une machine virtuelle ?_ => conteneurs sont plus légers
+
   - partagent le noyau de l'hôte
+
   - démarrent plus rapidement
+
   - utilisent moins de ressources
 
 ### Docker Compose
 
 - **Docker Compose** est un outil qui permet de définir et de gérer des applications **multi-conteneurs**.
+
 - Utilise un fichier YAML pour configurer les services de l'application, puis lancer tous les services avec une seule commande. Cela est particulièrement utile pour des applications qui nécessitent plusieurs composants qui interagissent. Par exemple, GLPI utilise un serveur web pour l'application GLPI et une BDD MySQL.
 
 ### Installation de Docker / Docker Compose
@@ -46,36 +63,57 @@
 - Copier le fichier `docker-compose.yml` proposé
 
 - Ce fichier décrit deux services qui vont être lancés ensemble :
+
   - `glpi` : le service principal qui exécute l'application GLPI
+
   - `db` : le service de base de données MySQL nécessaire pour stocker les données de GLPI
 
 - En local :
+
   - créer un répertoire `docker-glpi`
+
   - y créer un fichier `docker-compose.yml`
+
   - y coller le contenu copié puis sauvegarder
+
   - créer un fichier `.env` qui va contenir les variables d'environnement nécessaires à la configuration de la base de données, tel qu'indiqué sur la page Docker Hub de GLPI
 
 - On va modifier le port utilisé sur la machine hôte pour éviter les conflits avec d'autres services :
+
   - dans le fichier `docker-compose.yml`, localiser la section `ports` du service `glpi`
+
   - remplacer `80:80` par `51111:80` (ou un autre port non réservé)
+
   - ça signifie : « _le port 80 du conteneur GLPI sera accessible via le port 51111 de la machine hôte_ »
 
 - Pour lancer les services :
+
   - se placer dans le répertoire `docker-glpi` depuis un terminal
+
   - `docker-compose up -d`
+
   - (`-d` = mode détaché, pour que les services tournent en arrière-plan)
 
 - Il faut ensuite récupérer, comme indiqué, le mot de passe auto-généré pour la base de données MySQL, pour pouvoir configurer la timezone :
+
   - `docker compose ps` pour récupérer l'ID du conteneur `db` (à utiliser ci-dessous)
+
   - `docker logs <db_container_id>`
+
   - sur la sortie, localiser la ligne contenant `GENERATED ROOT PASSWORD` et récupérer le mot de passe
+
   - `docker exec -it <db_container_id> mysql -u root -p -e "GRANT SELECT ON mysql.time_zone_name TO 'glpi'@'%';FLUSH PRIVILEGES;"`
+
   - (donner le mot de passe MySQL récupéré)
+
   - `docker exec -it <glpi_container_id> /var/www/glpi/bin/console database:enable_timezones`
+
   - (attention cette fois c'est l'ID du container GLPI, pas de la DB)
 
 - Il faut obtenir : `Timezone usage has been enabled.`
 
 - L'application GLPI est alors accessible à l'adresse http://localhost:51111
+
   - user : `glpi`
+
   - password : `glpi`

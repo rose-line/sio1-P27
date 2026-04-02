@@ -37,16 +37,27 @@ Le [lien d'invitation](https://classroom.github.com/a/BszUAi1G)
 * C'est trop facile : ajouter un ennemi supplémentaire qui apparaît après un certain temps (disons 10 secondes)
 
 * Arrivé ici, il faut penser régulièrement à s'arrêter avant d'implémenter une nouvelle fonctionnalité et systématiquement regarder si un _refactoring_ ne serait pas judicieux
+
   * _Refactoring_ = réorganisation du code pour le rendre plus clair, plus lisible, plus maintenable, sans changer son comportement (sans ajouter de fonctionnalité)
+
   * exemple 1 : extraire une classe depuis une classe existante, comme la classe `Enemy` depuis la classe principale
+
     * car de nombreux comportements concernent les ennemis
+
     * et cela devient nécessaire lorsqu'on veut gérer correctement plusieurs ennemis
+
   * exemple 2 : extraire une méthode depuis une méthode existante
+
     * car la méthode devient trop longue et difficile à lire
+
     * ou bien parce que le code est répété à plusieurs endroits
+
   * exemple 3 : renommer une variable ou une méthode parce qu'on a mieux compris son rôle ou qu'on a trouvé un nom plus clair
+
   * exemple 4 : supprimer du code mort
+
     * code commenté qui n'est plus utilisé
+
     * ce code a de toute façon sûremnent été _commité_, donc au pire, on peut le retrouver dans l'historique du dépôt Git si on en a vraiment besoin
 
 * Faire en sorte que les ennemis apparaissent à des endroits aléatoires

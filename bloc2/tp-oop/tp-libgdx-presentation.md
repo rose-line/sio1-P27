@@ -240,7 +240,7 @@ font.setColor(Color.YELLOW); // couleur
 
 // Utilisation (a priori dans la méthode de rendu)
 // affichage en coordonnées (100, 100) ici
-game.font.draw(game.batch, "Du texte", 100, 100);
+font.draw(game.batch, "Du texte", 100, 100);
 ```
 
 ## Interface utilisateur (UI)

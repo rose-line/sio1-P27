@@ -82,7 +82,7 @@
 
   - y coller le contenu copié puis sauvegarder
 
-  - créer un fichier `.env` qui va contenir les variables d'environnement nécessaires à la configuration de la base de données, tel qu'indiqué sur la page Docker Hub de GLPI
+  - créer un fichier `.env` qui va contenir les variables d'environnement nécessaires à la configuration de la base de données, tel qu'indiqué sur la page Docker Hub de GLPI (recopier les variables d'environnement proposées)
 
 - On va modifier le port utilisé sur la machine hôte pour éviter les conflits avec d'autres services :
 
